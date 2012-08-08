@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: zregvart
+Build-Jdk: 1.6.0_29
+Extension-Name: xvfb
+Specification-Title: Starts and stopps Xvfb with the build
+Implementation-Title: xvfb
+Implementation-Version: 1.0.2
+Group-Id: org.jenkins-ci.plugins
+Short-Name: xvfb
+Long-Name: Jenkins Xvfb plugin
+Url: http://wiki.jenkins-ci.org/display/JENKINS/Xvfb+Plugin
+Plugin-Version: 1.0.2
+Hudson-Version: 1.399
+Plugin-Developers: Zoran Regvart:zregvart:zregvart+xvfbjenkins@gmail.com
+
