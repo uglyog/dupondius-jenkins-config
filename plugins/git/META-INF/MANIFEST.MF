@@ -6,12 +6,12 @@ Build-Jdk: 1.6.0_31
 Extension-Name: git
 Specification-Title: Integrates Jenkins with GIT SCM
 Implementation-Title: git
-Implementation-Version: 1.1.21
+Implementation-Version: 1.1.22
 Group-Id: org.jenkinsci.plugins
 Short-Name: git
 Long-Name: Jenkins GIT plugin
 Url: http://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin
-Plugin-Version: 1.1.21
+Plugin-Version: 1.1.22
 Hudson-Version: 1.424
 Jenkins-Version: 1.424
 Plugin-Dependencies: parameterized-trigger:2.4;resolution:=optional,to

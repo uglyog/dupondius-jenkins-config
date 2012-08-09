@@ -2,5 +2,9 @@
 <hudson.scm.CVSSCM_-DescriptorImpl>
   <helpRedirect/>
   <generation>1</generation>
-  <noCompression>false</noCompression>
+  <compressionLevel>3</compressionLevel>
+  <privateKeyLocation>/var/lib/jenkins/.ssh/id_rsa</privateKeyLocation>
+  <privateKeyPassword>2cTj5bVqCqgxo7w5LfmkEQ==</privateKeyPassword>
+  <knownHostsLocation>/var/lib/jenkins/.ssh/known_hosts</knownHostsLocation>
+  <passwords/>
 </hudson.scm.CVSSCM_-DescriptorImpl>
