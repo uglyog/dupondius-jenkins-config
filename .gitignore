@@ -3,3 +3,4 @@
 *.log
 jobs/*/builds/
 jobs/*/nextBuildNumber
+workspace/
