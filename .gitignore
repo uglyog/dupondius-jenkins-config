@@ -6,3 +6,4 @@ jobs/*/nextBuildNumber
 jobs/*/last*
 workspace/
 .ssh/
+.viminfo
