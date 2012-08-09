@@ -50,7 +50,7 @@
       <filterExecutors>false</filterExecutors>
       <filterQueue>false</filterQueue>
       <properties class="hudson.model.View$PropertyList"/>
-      <selectedJob>Build Project</selectedJob>
+      <selectedJob>Build_Project</selectedJob>
       <noOfDisplayedBuilds>5</noOfDisplayedBuilds>
       <buildViewTitle></buildViewTitle>
       <triggerOnlyLatestJob>false</triggerOnlyLatestJob>
