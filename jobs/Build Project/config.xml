@@ -64,11 +64,27 @@
     <hudson.tasks.Shell>
       <command>env</command>
     </hudson.tasks.Shell>
+    <hudson.plugins.rake.Rake>
+      <rakeInstallation>(Default)</rakeInstallation>
+      <rakeFile></rakeFile>
+      <rakeLibDir></rakeLibDir>
+      <rakeWorkingDir></rakeWorkingDir>
+      <tasks>db:migrate spec</tasks>
+      <silent>false</silent>
+    </hudson.plugins.rake.Rake>
   </builders>
   <publishers/>
   <buildWrappers>
     <hudson.plugins.ansicolor.AnsiColorBuildWrapper>
       <colorMapName>xterm</colorMapName>
     </hudson.plugins.ansicolor.AnsiColorBuildWrapper>
+    <ruby-proxy-object>
+      <ruby-object ruby-class="Jenkins::Plugin::Proxies::BuildWrapper" pluginid="rvm">
+        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
+        <object ruby-class="RvmWrapper" pluginid="rvm">
+          <impl pluginid="rvm" ruby-class="String">ruby-1.9.3@dashboard</impl>
+        </object>
+      </ruby-object>
+    </ruby-proxy-object>
   </buildWrappers>
 </project>
