@@ -7,3 +7,8 @@ jobs/*/last*
 workspace/
 .ssh/
 .viminfo
+.bash_login
+.bashrc
+.rvm/
+.zlogin
+.zshrc

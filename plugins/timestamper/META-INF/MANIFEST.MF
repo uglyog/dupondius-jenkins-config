@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: steve
+Build-Jdk: 1.6.0_22
+Extension-Name: timestamper
+Specification-Title: Adds timestamps to the Console Output
+Implementation-Title: timestamper
+Implementation-Version: 1.2.2
+Group-Id: org.jvnet.hudson.plugins
+Short-Name: timestamper
+Long-Name: Timestamper
+Url: http://wiki.jenkins-ci.org/display/JENKINS/Timestamper
+Plugin-Version: 1.2.2
+Hudson-Version: 1.374
+Plugin-Developers: Steven Brown:stevengbrown:StevenGBrown@gmail.com
+
