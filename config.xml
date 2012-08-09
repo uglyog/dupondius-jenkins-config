@@ -19,7 +19,19 @@
   <jdks/>
   <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
   <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
-  <clouds/>
+  <clouds>
+    <hudson.plugins.ec2.EC2Cloud>
+      <name>ec2-us-east-1</name>
+      <accessId>AKIAIB3JD5B24BFQEDVQ</accessId>
+      <secretKey>2ffyYIohhHKzIXGnG4mDnx1HPcP004qITceFMlh9XUm9y/hD2golx3uFc2kQffZjJwyh9oaqP0mB0OH2NoRyZg==</secretKey>
+      <privateKey>
+        <privateKey>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</privateKey>
+      </privateKey>
+      <instanceCap>3</instanceCap>
+      <templates class="java.util.Collections$EmptyList"/>
+      <region>us-east-1</region>
+    </hudson.plugins.ec2.EC2Cloud>
+  </clouds>
   <slaves/>
   <quietPeriod>5</quietPeriod>
   <scmCheckoutRetryCount>0</scmCheckoutRetryCount>

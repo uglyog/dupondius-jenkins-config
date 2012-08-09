@@ -2,3 +2,4 @@
 .gitconfig
 *.log
 jobs/*/builds/
+jobs/*/nextBuildNumber
