@@ -6,9 +6,9 @@
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
   <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy"/>
-  <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
-    <disableSignup>false</disableSignup>
-    <enableCaptcha>false</enableCaptcha>
+  <securityRealm class="hudson.plugins.openid.GoogleAppSsoSecurityRealm">
+    <endpoint>https://www.google.com/accounts/o8/site-xrds?hd=dius.com.au</endpoint>
+    <domain>dius.com.au</domain>
   </securityRealm>
   <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
   <workspaceDir>${JENKINS_HOME}/workspace/${ITEM_FULLNAME}</workspaceDir>

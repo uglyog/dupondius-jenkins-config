@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<user>
+  <fullName>Ronald Holshausen</fullName>
+  <properties>
+    <jenkins.security.ApiTokenProperty>
+      <apiToken>f/0A/Xflwrt9lDtVBDl8XY+9jQHRBaBfzu99ZzhoEJfZxOPltWoKqDGjvDkt+aQR</apiToken>
+    </jenkins.security.ApiTokenProperty>
+    <hudson.model.MyViewsProperty>
+      <views>
+        <hudson.model.AllView>
+          <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
+          <name>All</name>
+          <filterExecutors>false</filterExecutors>
+          <filterQueue>false</filterQueue>
+          <properties class="hudson.model.View$PropertyList"/>
+        </hudson.model.AllView>
+      </views>
+    </hudson.model.MyViewsProperty>
+    <hudson.plugins.openid.OpenIdUserProperty>
+      <identifiers>
+        <string>http://dius.com.au/openid?id=106047439474998939104</string>
+      </identifiers>
+    </hudson.plugins.openid.OpenIdUserProperty>
+    <hudson.search.UserSearchProperty>
+      <insensitiveSearch>false</insensitiveSearch>
+    </hudson.search.UserSearchProperty>
+    <hudson.tasks.Mailer_-UserProperty>
+      <emailAddress>rholshausen@dius.com.au</emailAddress>
+    </hudson.tasks.Mailer_-UserProperty>
+  </properties>
+</user>
