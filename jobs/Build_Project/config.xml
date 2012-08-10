@@ -65,8 +65,7 @@
       <command>env</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>gem install bundler
-bundle install</command>
+      <command>bundle install</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>bundle exec rake db:migrate spec</command>
@@ -80,10 +79,10 @@ bundle install</command>
     </hudson.plugins.ansicolor.AnsiColorBuildWrapper>
     <ruby-proxy-object>
       <ruby-object ruby-class="Jenkins::Plugin::Proxies::BuildWrapper" pluginid="rvm">
-        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
         <object ruby-class="RvmWrapper" pluginid="rvm">
           <impl pluginid="rvm" ruby-class="String">ruby-1.9.3@dashboard</impl>
         </object>
+        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
       </ruby-object>
     </ruby-proxy-object>
   </buildWrappers>

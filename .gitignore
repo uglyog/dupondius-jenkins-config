@@ -12,3 +12,4 @@ workspace/
 .rvm/
 .zlogin
 .zshrc
+.gem/
