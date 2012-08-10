@@ -64,14 +64,13 @@
     <hudson.tasks.Shell>
       <command>env</command>
     </hudson.tasks.Shell>
-    <hudson.plugins.rake.Rake>
-      <rakeInstallation>(Default)</rakeInstallation>
-      <rakeFile></rakeFile>
-      <rakeLibDir></rakeLibDir>
-      <rakeWorkingDir></rakeWorkingDir>
-      <tasks>db:migrate spec</tasks>
-      <silent>false</silent>
-    </hudson.plugins.rake.Rake>
+    <hudson.tasks.Shell>
+      <command>gem install bundler
+bundle install</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>bundle exec rake db:migrate spec</command>
+    </hudson.tasks.Shell>
   </builders>
   <publishers/>
   <buildWrappers>
