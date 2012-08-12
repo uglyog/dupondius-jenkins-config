@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <org.jenkinsci.plugins.xvfb.XvfbBuildWrapper_-XvfbBuildWrapperDescriptor>
   <helpRedirect/>
-  <installations/>
+  <installations>
+    <org.jenkinsci.plugins.xvfb.XvfbInstallation>
+      <name>system</name>
+      <home>/usr/bin</home>
+      <properties/>
+    </org.jenkinsci.plugins.xvfb.XvfbInstallation>
+  </installations>
 </org.jenkinsci.plugins.xvfb.XvfbBuildWrapper_-XvfbBuildWrapperDescriptor>
