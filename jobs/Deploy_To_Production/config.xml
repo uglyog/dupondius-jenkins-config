@@ -61,15 +61,11 @@
       <command>env</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>cap canary deploy
+      <command>cap production deploy
 </command>
     </hudson.tasks.Shell>
   </builders>
-  <publishers>
-    <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
-      <downstreamProjectNames>Deploy_To_QA</downstreamProjectNames>
-    </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
-  </publishers>
+  <publishers/>
   <buildWrappers>
     <hudson.plugins.timestamper.TimestamperBuildWrapper/>
     <hudson.plugins.ansicolor.AnsiColorBuildWrapper>
