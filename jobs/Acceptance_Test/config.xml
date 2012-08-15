@@ -70,6 +70,7 @@
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs>
             <hudson.plugins.git.GitRevisionBuildParameters/>
+            <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
           </configs>
           <projects>Deployment_Test, </projects>
           <condition>SUCCESS</condition>
