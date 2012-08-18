@@ -61,9 +61,7 @@
       <command>env</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>rake stamp_version
-cat config/version.yaml
-cap canary deploy
+      <command>cap canary deploy
 </command>
     </hudson.tasks.Shell>
   </builders>

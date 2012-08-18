@@ -64,7 +64,7 @@
   </clouds>
   <slaves>
     <hudson.plugins.ec2.EC2Slave>
-      <name>i-c13e4eba</name>
+      <name>i-336a2a48</name>
       <description>build-slave</description>
       <remoteFS></remoteFS>
       <numExecutors>1</numExecutors>

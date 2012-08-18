@@ -1,6 +1,6 @@
 .bash_history
 .gitconfig
-*.log
+*.log*
 jobs/*/builds/
 jobs/*/nextBuildNumber
 jobs/*/last*

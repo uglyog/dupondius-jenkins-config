@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<user>
+  <fullName>Stephen Bartlett</fullName>
+  <properties>
+    <jenkins.security.ApiTokenProperty>
+      <apiToken>tp7TbZGPH0vNLDP9j8/CY9iupErSTGRTWb1rMHsw4qvZxOPltWoKqDGjvDkt+aQR</apiToken>
+    </jenkins.security.ApiTokenProperty>
+    <hudson.model.MyViewsProperty>
+      <views>
+        <hudson.model.AllView>
+          <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
+          <name>All</name>
+          <filterExecutors>false</filterExecutors>
+          <filterQueue>false</filterQueue>
+          <properties class="hudson.model.View$PropertyList"/>
+        </hudson.model.AllView>
+      </views>
+    </hudson.model.MyViewsProperty>
+    <hudson.plugins.openid.OpenIdUserProperty>
+      <identifiers>
+        <string>http://dius.com.au/openid?id=112162200454077775593</string>
+      </identifiers>
+    </hudson.plugins.openid.OpenIdUserProperty>
+    <hudson.search.UserSearchProperty>
+      <insensitiveSearch>false</insensitiveSearch>
+    </hudson.search.UserSearchProperty>
+    <hudson.tasks.Mailer_-UserProperty>
+      <emailAddress>sbartlett@dius.com.au</emailAddress>
+    </hudson.tasks.Mailer_-UserProperty>
+  </properties>
+</user>
