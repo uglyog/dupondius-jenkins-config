@@ -56,7 +56,7 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers class="vector">
     <hudson.triggers.SCMTrigger>
-      <spec>*/1 * * * *</spec>
+      <spec>*/2 * * * *</spec>
     </hudson.triggers.SCMTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
@@ -68,7 +68,7 @@
       <command>bundle install</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>bundle exec rake db:migrate spec</command>
+      <command>bundle exec rake db:migrate spec --trace</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
