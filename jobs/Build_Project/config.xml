@@ -32,7 +32,7 @@
     <recursiveSubmodules>false</recursiveSubmodules>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <authorOrCommitter>false</authorOrCommitter>
-    <clean>false</clean>
+    <clean>true</clean>
     <wipeOutWorkspace>false</wipeOutWorkspace>
     <pruneBranches>false</pruneBranches>
     <remotePoll>false</remotePoll>
@@ -46,7 +46,7 @@
     <excludedUsers></excludedUsers>
     <gitConfigName></gitConfigName>
     <gitConfigEmail></gitConfigEmail>
-    <skipTag>false</skipTag>
+    <skipTag>true</skipTag>
     <includedRegions></includedRegions>
     <scmName></scmName>
   </scm>
@@ -62,7 +62,9 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>env</command>
+      <command>env
+mkdir -p reports
+rm -rf reports/*</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>bundle install</command>
@@ -72,6 +74,22 @@
     </hudson.tasks.Shell>
   </builders>
   <publishers>
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>reports/**/*.*</artifacts>
+      <latestOnly>false</latestOnly>
+    </hudson.tasks.ArtifactArchiver>
+    <hudson.plugins.git.GitPublisher>
+      <configVersion>2</configVersion>
+      <pushMerge>false</pushMerge>
+      <pushOnlyIfSuccess>true</pushOnlyIfSuccess>
+      <tagsToPush>
+        <hudson.plugins.git.GitPublisher_-TagToPush>
+          <targetRepoName>origin</targetRepoName>
+          <tagName>v0.0.$BUILD_NUMBER</tagName>
+          <createTag>true</createTag>
+        </hudson.plugins.git.GitPublisher_-TagToPush>
+      </tagsToPush>
+    </hudson.plugins.git.GitPublisher>
     <hudson.plugins.parameterizedtrigger.BuildTrigger>
       <configs>
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
