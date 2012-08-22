@@ -32,7 +32,7 @@
     <recursiveSubmodules>false</recursiveSubmodules>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <authorOrCommitter>false</authorOrCommitter>
-    <clean>false</clean>
+    <clean>true</clean>
     <wipeOutWorkspace>false</wipeOutWorkspace>
     <pruneBranches>false</pruneBranches>
     <remotePoll>false</remotePoll>
@@ -46,7 +46,7 @@
     <excludedUsers></excludedUsers>
     <gitConfigName></gitConfigName>
     <gitConfigEmail></gitConfigEmail>
-    <skipTag>false</skipTag>
+    <skipTag>true</skipTag>
     <includedRegions></includedRegions>
     <scmName></scmName>
   </scm>
@@ -58,14 +58,27 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>env</command>
+      <command>env
+mkdir -p reports
+rm -rf reports/*</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>cap staging deploy
 </command>
     </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>sleep 20
+curl http://staging.dupondi.us/status/heart_beat</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>RAILS_ENV=cucumber rake db:migrate cucumber:staging --trace</command>
+    </hudson.tasks.Shell>
   </builders>
   <publishers>
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>reports/**/*.*</artifacts>
+      <latestOnly>false</latestOnly>
+    </hudson.tasks.ArtifactArchiver>
     <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
       <downstreamProjectNames>Deploy_To_Production</downstreamProjectNames>
     </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
@@ -83,5 +96,12 @@
         <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
       </ruby-object>
     </ruby-proxy-object>
+    <org.jenkinsci.plugins.xvfb.XvfbBuildWrapper>
+      <installationName>system</installationName>
+      <screen>1024x768x24</screen>
+      <debug>false</debug>
+      <timeout>0</timeout>
+      <additionalOptions></additionalOptions>
+    </org.jenkinsci.plugins.xvfb.XvfbBuildWrapper>
   </buildWrappers>
 </project>

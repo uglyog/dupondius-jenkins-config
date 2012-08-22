@@ -67,7 +67,8 @@ rm -rf reports/*</command>
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>curl http://canary.dupondi.us/status/heart_beat</command>
+      <command>sleep 20
+curl http://canary.dupondi.us/status/heart_beat</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>RAILS_ENV=cucumber rake db:migrate cucumber:canary --trace</command>
