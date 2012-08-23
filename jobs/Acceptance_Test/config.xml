@@ -50,7 +50,8 @@
     <includedRegions></includedRegions>
     <scmName></scmName>
   </scm>
-  <canRoam>true</canRoam>
+  <assignedNode>build_on_me_please</assignedNode>
+  <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
