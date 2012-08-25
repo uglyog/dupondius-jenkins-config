@@ -37,7 +37,7 @@
           <remoteFS></remoteFS>
           <sshPort>22</sshPort>
           <type>M1Small</type>
-          <labels>build_on_me_please</labels>
+          <labels></labels>
           <initScript>#!/bin/bash -e
 sudo yum install -y git gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel
 sudo yum install -y ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
@@ -123,7 +123,7 @@ exit 0</initScript>
   </clouds>
   <slaves>
     <hudson.plugins.ec2.EC2Slave>
-      <name>i-4d101c36</name>
+      <name>i-3fd1dd44</name>
       <description>build-slave</description>
       <remoteFS></remoteFS>
       <numExecutors>1</numExecutors>
@@ -134,7 +134,7 @@ exit 0</initScript>
         <SAMEUSER>0</SAMEUSER>
         <RECONNECT>-2</RECONNECT>
       </launcher>
-      <label>build_on_me_please</label>
+      <label></label>
       <nodeProperties/>
       <initScript>#!/bin/bash -e
 sudo yum install -y git gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel

@@ -64,7 +64,8 @@ rm -rf reports/*
 git fetch --tags</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>RAILS_ENV=cucumber bundle exec rake db:migrate assets:precompile cucumber --trace</command>
+      <command>bundle install
+RAILS_ENV=cucumber bundle exec rake db:migrate assets:precompile cucumber --trace</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
