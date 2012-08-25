@@ -3,7 +3,7 @@
   <disabledAdministrativeMonitors/>
   <version>1.477</version>
   <numExecutors>1</numExecutors>
-  <mode>EXCLUSIVE</mode>
+  <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
   <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy"/>
   <securityRealm class="hudson.plugins.openid.GoogleAppSsoSecurityRealm">
@@ -123,99 +123,7 @@ exit 0</initScript>
   </clouds>
   <slaves>
     <hudson.plugins.ec2.EC2Slave>
-      <name>i-654d7f1e</name>
-      <description>build-slave</description>
-      <remoteFS></remoteFS>
-      <numExecutors>1</numExecutors>
-      <mode>NORMAL</mode>
-      <retentionStrategy class="hudson.plugins.ec2.EC2RetentionStrategy"/>
-      <launcher class="hudson.plugins.ec2.ssh.EC2UnixLauncher">
-        <FAILED>-1</FAILED>
-        <SAMEUSER>0</SAMEUSER>
-        <RECONNECT>-2</RECONNECT>
-      </launcher>
-      <label>build_on_me_please</label>
-      <nodeProperties/>
-      <initScript>#!/bin/bash -e
-sudo yum install -y git gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel
-sudo yum install -y ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
-sudo yum -y groupinstall &quot;X Window System&quot;
-sudo yum -y groupinstall &quot;Fonts&quot;
-sudo yum install -y sqlite-devel sqlite Xvfb firefox xwd
-#sudo yum -y install dejavu-sans-fonts dejavu-sans-mono-fonts dejavu-serif-fonts   
-#sudo yum install dbus-x11
-#sudo rpm -i http://dl.atrpms.net/el6-x86_64/atrpms/stable/atrpms-repo-6-5.el6.x86_64.rpm
-#sudo yum install -y --enablerepo=atrpms-testing qt47-webkit-devel
-#echo &apos;export QMAKE=/usr/bin/qmake-qt47&apos; &gt;&gt; ~/.bashrc
-echo &apos;-----BEGIN RSA PRIVATE KEY-----
-MIIEoAIBAAKCAQEAyrBOE3zDQMcoRi9no60foxqEy7EVmAARowko6rERDXCp5tKr
-Y3dOpk0wDyuZgvvq2gfaVRaUuwo1AJwJk43sFb6ZVxRwNZLjIF2dFV+RjQKy1NnP
-d9ymrZacIOyQXLzFUWsM59JPA6v8zznF826RSBuQIIGESz9n0lhICfO4oIq62Bex
-llh9O/vU71EKnzFxqq2StNCd5q/tit7AK0GiHnm2OyufBQrGhUjVrCDmXx2X9XX7
-7swHky56z4ZgZk1XdC4EEHE4WariMzryjBPldCXkQGq5x97IC35aeCCVcyDAkQ+5
-HRxJK/Ja2RYy8f5bsmYRcI06suWGePUQO48BjwIBIwKCAQAuVC8aZaj43RCFEiZR
-TCR9DWAujuBdQdglQ+wYYvyVW5SMh+ypBVPOPYdT7LVfxI1zqgYE0fYcH5cWFQmA
-z/tyrzj99gsE7l/M4jKIit9wsCjgMckFdENa4Ji3EYAVMnY+ft5g350IJ0+6Vlkh
-st9g8Ft1JOsJ4ptjR2DsVPcAH02Cka+Z9tfxI6ZhXDyYC7Y5MdDKpn2ofzRt0hGm
-uWh0atGQnzqbczMMui0Um846L4xqJHtanRBjmk20bLpJ9oajY9M+SdJ1jT1ek5TW
-I9V5R4vkYOiausqqzDBWuBQFqr+S/wun1PUm9hEhAMF/KtcyNV/eni+GYtl04Kph
-MlYLAoGBAOncfTDMOLVjaiKkgcE3O+0fUXlQZLym+IIdp491LD86eQR75z6em0m0
-HuIjNe9AZiHxLl+Ez9719vUFQV3bHOun9/+6N3CitkLGkORYjbBauymFtNFkZ/Xh
-Av39KDljTgh14Mj9VmbgZLdGLyBzfdZ6qEVW8ygvCekpEzj4mpn3AoGBAN3gXSCI
-h9cZlbpg28BOwkdRIift03t+iuYMwCN8qjnmrVzmi7/+V315e25OwVDgJ2+z6AC9
-jQDpdHHU6VOHmd7BYUglts70qrLu5GMKqW8m0bazje6+hZt/Pgj/kwR3B7H4Ex0h
-gjHBGRiig8PyJRe8FEirpgKX6yXwiu3ZuC8pAoGAFAuVs7m7t8axU20vsXnDTtbM
-eBzVb0GDA9an9lqAIq09kquI2XtPI5MYlwpVFIHc3laAUVSG2Ji9ZXV6oaURG4Nt
-B0p5x9NutUQ4ThY4B81DPhLGWxc8HGO+bYq6Tg/TfRFrCenUNLQl49LQ1uVT7c//
-y23aU+bGVdBSGtN690ECgYA5Dc7N2fcLbPqdo+C8bAYSVrEC9AMuYl47J9miuagd
-hHW4zZGmZfk9haNlgfcyDcD/d2eLKW1mom5mafLa9vuuTvvCGFOUTYr6z7cSJ1Aj
-5WkgWg6N2ThMjm8JoM4IdmEQgZ6D1WqfFGWJ/edeRZSCcjEaAEChlMdwJ+k12OY4
-AwKBgAKjP2ZxCaGkZkd3ihBu06WzlnZYHU9i2IGLOhqB5IvacuL+MpHlq8whxwxx
-r6pUQ+A77WVHgdG+1m1EdLvdMkeYTEhYz0CX11kAsg5Hqtx0NzDizDYbOLCtZ91j
-iUwmvLgD9bJvwsMc7X0ywkU+e63yCz3ZFLuEUTqPsOlPL5Gu
------END RSA PRIVATE KEY-----&apos; &gt; ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa
-set +e
-ssh -o StrictHostKeyChecking=no git@github.com
-set -e
-mkdir -p ~/workspace
-echo &apos;-----BEGIN RSA PRIVATE KEY-----
-MIIEoAIBAAKCAQEAyrBOE3zDQMcoRi9no60foxqEy7EVmAARowko6rERDXCp5tKr
-Y3dOpk0wDyuZgvvq2gfaVRaUuwo1AJwJk43sFb6ZVxRwNZLjIF2dFV+RjQKy1NnP
-d9ymrZacIOyQXLzFUWsM59JPA6v8zznF826RSBuQIIGESz9n0lhICfO4oIq62Bex
-llh9O/vU71EKnzFxqq2StNCd5q/tit7AK0GiHnm2OyufBQrGhUjVrCDmXx2X9XX7
-7swHky56z4ZgZk1XdC4EEHE4WariMzryjBPldCXkQGq5x97IC35aeCCVcyDAkQ+5
-HRxJK/Ja2RYy8f5bsmYRcI06suWGePUQO48BjwIBIwKCAQAuVC8aZaj43RCFEiZR
-TCR9DWAujuBdQdglQ+wYYvyVW5SMh+ypBVPOPYdT7LVfxI1zqgYE0fYcH5cWFQmA
-z/tyrzj99gsE7l/M4jKIit9wsCjgMckFdENa4Ji3EYAVMnY+ft5g350IJ0+6Vlkh
-st9g8Ft1JOsJ4ptjR2DsVPcAH02Cka+Z9tfxI6ZhXDyYC7Y5MdDKpn2ofzRt0hGm
-uWh0atGQnzqbczMMui0Um846L4xqJHtanRBjmk20bLpJ9oajY9M+SdJ1jT1ek5TW
-I9V5R4vkYOiausqqzDBWuBQFqr+S/wun1PUm9hEhAMF/KtcyNV/eni+GYtl04Kph
-MlYLAoGBAOncfTDMOLVjaiKkgcE3O+0fUXlQZLym+IIdp491LD86eQR75z6em0m0
-HuIjNe9AZiHxLl+Ez9719vUFQV3bHOun9/+6N3CitkLGkORYjbBauymFtNFkZ/Xh
-Av39KDljTgh14Mj9VmbgZLdGLyBzfdZ6qEVW8ygvCekpEzj4mpn3AoGBAN3gXSCI
-h9cZlbpg28BOwkdRIift03t+iuYMwCN8qjnmrVzmi7/+V315e25OwVDgJ2+z6AC9
-jQDpdHHU6VOHmd7BYUglts70qrLu5GMKqW8m0bazje6+hZt/Pgj/kwR3B7H4Ex0h
-gjHBGRiig8PyJRe8FEirpgKX6yXwiu3ZuC8pAoGAFAuVs7m7t8axU20vsXnDTtbM
-eBzVb0GDA9an9lqAIq09kquI2XtPI5MYlwpVFIHc3laAUVSG2Ji9ZXV6oaURG4Nt
-B0p5x9NutUQ4ThY4B81DPhLGWxc8HGO+bYq6Tg/TfRFrCenUNLQl49LQ1uVT7c//
-y23aU+bGVdBSGtN690ECgYA5Dc7N2fcLbPqdo+C8bAYSVrEC9AMuYl47J9miuagd
-hHW4zZGmZfk9haNlgfcyDcD/d2eLKW1mom5mafLa9vuuTvvCGFOUTYr6z7cSJ1Aj
-5WkgWg6N2ThMjm8JoM4IdmEQgZ6D1WqfFGWJ/edeRZSCcjEaAEChlMdwJ+k12OY4
-AwKBgAKjP2ZxCaGkZkd3ihBu06WzlnZYHU9i2IGLOhqB5IvacuL+MpHlq8whxwxx
-r6pUQ+A77WVHgdG+1m1EdLvdMkeYTEhYz0CX11kAsg5Hqtx0NzDizDYbOLCtZ91j
-iUwmvLgD9bJvwsMc7X0ywkU+e63yCz3ZFLuEUTqPsOlPL5Gu
------END RSA PRIVATE KEY-----&apos; &gt; ~/workspace/deployer.pem
-chmod 600 ~/workspace/deployer.pem
-exit 0</initScript>
-      <remoteAdmin>ec2-user</remoteAdmin>
-      <rootCommandPrefix></rootCommandPrefix>
-      <jvmopts></jvmopts>
-      <stopOnTerminate>false</stopOnTerminate>
-      <sshPort>22</sshPort>
-    </hudson.plugins.ec2.EC2Slave>
-    <hudson.plugins.ec2.EC2Slave>
-      <name>i-6d88ba16</name>
+      <name>i-4d101c36</name>
       <description>build-slave</description>
       <remoteFS></remoteFS>
       <numExecutors>1</numExecutors>
@@ -337,7 +245,7 @@ exit 0</initScript>
   </views>
   <primaryView>All</primaryView>
   <slaveAgentPort>0</slaveAgentPort>
-  <label>master</label>
+  <label></label>
   <nodeProperties/>
   <globalNodeProperties/>
 </hudson>
