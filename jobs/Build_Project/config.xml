@@ -59,10 +59,10 @@
       <spec>*/2 * * * *</spec>
     </hudson.triggers.SCMTrigger>
   </triggers>
-  <concurrentBuild>false</concurrentBuild>
+  <concurrentBuild>true</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>env
+      <command>env | sort
 mkdir -p reports
 rm -rf reports/*</command>
     </hudson.tasks.Shell>
@@ -70,7 +70,10 @@ rm -rf reports/*</command>
       <command>bundle install</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>bundle exec rake db:migrate spec --trace</command>
+      <command>export LAUNCHPAD_ENABLED=true
+export AWS_ENABLED=false
+
+bundle exec rake db:migrate spec --trace</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
@@ -97,7 +100,8 @@ rm -rf reports/*</command>
             <hudson.plugins.git.GitRevisionBuildParameters/>
             <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-              <properties>PIPELINE_BUILD_NUMBER=$BUILD_NUMBER</properties>
+              <properties>PIPELINE_BUILD_NUMBER=$BUILD_NUMBER
+PIPELINE_VERSION=v0.0.$BUILD_NUMBER</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
           </configs>
           <projects>Acceptance_Test</projects>

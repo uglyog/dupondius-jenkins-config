@@ -58,7 +58,24 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>env
+      <command>#!/bin/bash -e
+env | sort
+
+if [ ! $PIPELINE_BUILD_NUMBER ]
+  then 
+    printf &apos;\033[0;33;41m                                                                                                        \033[0m\n&apos;
+    printf &apos;\033[0;33;41m                         THIS BUILD IS NOT RUNNING AS PART OF A PIPELINE!                               \033[0m\n&apos;
+    printf &apos;\033[0;33;41m                                                                                                        \033[0m\n&apos;
+    exit 1
+fi
+
+if [ $PIPELINE_VERSION ]
+  then
+    echo Checking out $PIPELINE_VERSION ...
+    git checkout $PIPELINE_VERSION
+    echo HEAD is now: `git log --decorate --format=format:&apos;%H %d&apos; --tags | grep \(HEAD`
+fi
+
 mkdir -p reports
 rm -rf reports/*</command>
     </hudson.tasks.Shell>
