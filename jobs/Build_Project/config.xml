@@ -92,7 +92,7 @@ bundle exec rake db:migrate spec --trace</command>
       <tagsToPush>
         <hudson.plugins.git.GitPublisher_-TagToPush>
           <targetRepoName>origin</targetRepoName>
-          <tagName>v0.0.$BUILD_NUMBER</tagName>
+          <tagName>v0.1.$BUILD_NUMBER</tagName>
           <createTag>true</createTag>
         </hudson.plugins.git.GitPublisher_-TagToPush>
       </tagsToPush>
@@ -105,7 +105,7 @@ bundle exec rake db:migrate spec --trace</command>
             <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
               <properties>PIPELINE_BUILD_NUMBER=$BUILD_NUMBER
-PIPELINE_VERSION=v0.0.$BUILD_NUMBER</properties>
+PIPELINE_VERSION=v0.1.$BUILD_NUMBER</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
           </configs>
           <projects>Acceptance_Test</projects>
@@ -122,10 +122,10 @@ PIPELINE_VERSION=v0.0.$BUILD_NUMBER</properties>
     </hudson.plugins.ansicolor.AnsiColorBuildWrapper>
     <ruby-proxy-object>
       <ruby-object ruby-class="Jenkins::Plugin::Proxies::BuildWrapper" pluginid="rvm">
-        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
         <object ruby-class="RvmWrapper" pluginid="rvm">
           <impl pluginid="rvm" ruby-class="String">ruby-1.9.3@dashboard</impl>
         </object>
+        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
       </ruby-object>
     </ruby-proxy-object>
   </buildWrappers>
