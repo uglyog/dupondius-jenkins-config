@@ -91,7 +91,7 @@ cap canary deploy</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 180
-curl http://canary.dupondi.us/status/heart_beat</command>
+curl http://canary.dupondius.dupondi.us/status/heart_beat</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 120
