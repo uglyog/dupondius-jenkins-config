@@ -1,0 +1,5 @@
+<l:dependencies xmlns:l='licenses'>
+  <l:dependency name='Timestamper' groupId='org.jenkins-ci.plugins' artifactId='timestamper' version='1.3' url='http://wiki.jenkins-ci.org/display/JENKINS/Timestamper'>
+    <l:description>Adds timestamps to the Console Output</l:description>
+  </l:dependency>
+</l:dependencies>
