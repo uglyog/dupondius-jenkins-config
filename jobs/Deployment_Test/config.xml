@@ -90,12 +90,11 @@ export PROJECT_NAME=dupondius
 cap canary deploy</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>sleep 180
+      <command>sleep 60
 curl http://canary.dupondius.dupondi.us/status/heart_beat</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>sleep 120
-RAILS_ENV=cucumber rake db:migrate cucumber:canary --trace</command>
+      <command>RAILS_ENV=cucumber rake db:migrate cucumber:canary --trace</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
@@ -114,10 +113,10 @@ RAILS_ENV=cucumber rake db:migrate cucumber:canary --trace</command>
     </hudson.plugins.ansicolor.AnsiColorBuildWrapper>
     <ruby-proxy-object>
       <ruby-object ruby-class="Jenkins::Plugin::Proxies::BuildWrapper" pluginid="rvm">
-        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
         <object ruby-class="RvmWrapper" pluginid="rvm">
           <impl pluginid="rvm" ruby-class="String">ruby-1.9.3@dashboard</impl>
         </object>
+        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
       </ruby-object>
     </ruby-proxy-object>
     <org.jenkinsci.plugins.xvfb.XvfbBuildWrapper>
