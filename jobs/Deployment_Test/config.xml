@@ -81,8 +81,13 @@ rm -rf reports/*</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>bundle install
-cap canary deploy
-</command>
+export LAUNCHPAD_ENABLED=true
+export LAUNCHPAD_JOBS=true
+export AWS_ENABLED=false
+export AWS_ACCESS_KEY=AKIAIB3JD5B24BFQEDVQ
+export AWS_SECRET_ACCESS_KEY=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
+export PROJECT_NAME=dupondius
+cap canary deploy</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 180
@@ -109,10 +114,10 @@ RAILS_ENV=cucumber rake db:migrate cucumber:canary --trace</command>
     </hudson.plugins.ansicolor.AnsiColorBuildWrapper>
     <ruby-proxy-object>
       <ruby-object ruby-class="Jenkins::Plugin::Proxies::BuildWrapper" pluginid="rvm">
+        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
         <object ruby-class="RvmWrapper" pluginid="rvm">
           <impl pluginid="rvm" ruby-class="String">ruby-1.9.3@dashboard</impl>
         </object>
-        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
       </ruby-object>
     </ruby-proxy-object>
     <org.jenkinsci.plugins.xvfb.XvfbBuildWrapper>
