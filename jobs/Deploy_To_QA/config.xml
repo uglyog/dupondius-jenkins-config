@@ -11,7 +11,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty>
-      <projectUrl>https://github.com/nadnerb/dashboard/</projectUrl>
+      <projectUrl>https://github.com/uglyog/dashboard/</projectUrl>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
   <scm class="hudson.plugins.git.GitSCM">
@@ -20,7 +20,7 @@
       <hudson.plugins.git.UserRemoteConfig>
         <name></name>
         <refspec></refspec>
-        <url>git@github.com:nadnerb/dashboard.git</url>
+        <url>git@github.com:uglyog/dashboard.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -81,17 +81,11 @@ rm -rf reports/*</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>bundle install
-export LAUNCHPAD_ENABLED=true
-export LAUNCHPAD_JOBS=true
-export AWS_ENABLED=true
-export AWS_ACCESS_KEY=AKIAIB3JD5B24BFQEDVQ
-export AWS_SECRET_ACCESS_KEY=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
-export PROJECT_NAME=dupondius
 cap qa deploy</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 180
-curl http://qa.dupondi.us/status/heart_beat</command>
+curl http://qa.testci6.dupondi.us/status/heart_beat</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>RAILS_ENV=cucumber rake db:migrate cucumber:qa --trace</command>
@@ -114,7 +108,7 @@ curl http://qa.dupondi.us/status/heart_beat</command>
     <ruby-proxy-object>
       <ruby-object ruby-class="Jenkins::Plugin::Proxies::BuildWrapper" pluginid="rvm">
         <object ruby-class="RvmWrapper" pluginid="rvm">
-          <impl pluginid="rvm" ruby-class="String">ruby-1.9.3@dashboard</impl>
+          <impl pluginid="rvm" ruby-class="String">ruby-1.9.3@testci</impl>
         </object>
         <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
       </ruby-object>
