@@ -113,7 +113,7 @@ RAILS_ENV=cucumber rake db:migrate cucumber:production --trace</command>
       <ruby-object ruby-class="Jenkins::Plugin::Proxies::BuildWrapper" pluginid="rvm">
         <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
         <object ruby-class="RvmWrapper" pluginid="rvm">
-          <impl pluginid="rvm" ruby-class="String">ruby-1.9.3@dashboard</impl>
+          <impl pluginid="rvm" ruby-class="String">ruby-1.9.3</impl>
         </object>
       </ruby-object>
     </ruby-proxy-object>
