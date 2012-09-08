@@ -13,7 +13,7 @@
     </description>
   </temporaryOfflineCause>
   <disabledAdministrativeMonitors/>
-  <version>1.479</version>
+  <version>1.480</version>
   <numExecutors>1</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
@@ -113,8 +113,7 @@ exit 0</initScript>
       <region>us-east-1</region>
     </hudson.plugins.ec2.EC2Cloud>
   </clouds>
-  <slaves>
-  </slaves>
+  <slaves/>
   <quietPeriod>5</quietPeriod>
   <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
   <views>
