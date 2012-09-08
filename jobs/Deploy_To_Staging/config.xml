@@ -11,7 +11,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty>
-      <projectUrl>https://github.com/nadnerb/dashboard/</projectUrl>
+      <projectUrl>https://github.com/uglyog/grails</projectUrl>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
   <scm class="hudson.plugins.git.GitSCM">
@@ -20,7 +20,7 @@
       <hudson.plugins.git.UserRemoteConfig>
         <name></name>
         <refspec></refspec>
-        <url>git@github.com:nadnerb/dashboard.git</url>
+        <url>git@github.com:uglyog/grails.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -86,7 +86,7 @@ cap staging deploy</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 20
-curl http://staging.testci.dupondi.us/status/heart_beat</command>
+curl http://staging.grails.dupondi.us/status/heart_beat</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>RAILS_ENV=cucumber rake db:migrate cucumber:staging --trace</command>
@@ -108,10 +108,10 @@ curl http://staging.testci.dupondi.us/status/heart_beat</command>
     </hudson.plugins.ansicolor.AnsiColorBuildWrapper>
     <ruby-proxy-object>
       <ruby-object ruby-class="Jenkins::Plugin::Proxies::BuildWrapper" pluginid="rvm">
-        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
         <object ruby-class="RvmWrapper" pluginid="rvm">
           <impl pluginid="rvm" ruby-class="String">ruby-1.9.3</impl>
         </object>
+        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
       </ruby-object>
     </ruby-proxy-object>
     <org.jenkinsci.plugins.xvfb.XvfbBuildWrapper>
