@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<list>
+  <hudson.model.Queue_-BuildableItem>
+    <actions>
+      <hudson.model.CauseAction>
+        <causes>
+          <hudson.triggers.SCMTrigger_-SCMTriggerCause>
+            <pollingLog>Started on Sep 8, 2012 7:56:36 AM
+No existing build. Scheduling a new one.
+Done. Took 0 ms
+Changes found
+</pollingLog>
+          </hudson.triggers.SCMTrigger_-SCMTriggerCause>
+        </causes>
+      </hudson.model.CauseAction>
+    </actions>
+    <id>2</id>
+    <task class="hudson.model.FreeStyleProject">Build_Project</task>
+    <inQueueSince>1347090996615</inQueueSince>
+    <buildableStartMilliseconds>1347091001616</buildableStartMilliseconds>
+  </hudson.model.Queue_-BuildableItem>
+</list>
