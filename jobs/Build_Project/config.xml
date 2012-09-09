@@ -65,7 +65,7 @@
       <command>env | sort
 mkdir -p reports
 rm -rf reports/*
-
+touch reports/rspec_output.html
 mkdir -p tmp</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
