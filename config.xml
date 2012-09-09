@@ -55,6 +55,8 @@ sudo apt-get -q update
 sudo apt-get -q -y upgrade
 sudo apt-get -q update
 sudo apt-get install -q -y openjdk-7-jdk openjdk-7-jre-headless git gcc build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion libqt4-dev libqtwebkit-dev xvfb firefox mysql-client libcurl3-dev libmysql-ruby libmysqlclient-dev
+echo &quot;Australia/Melbourne&quot; | sudo tee /etc/timezone
+sudo dpkg-reconfigure --frontend noninteractive tzdata
 curl -L https://s3.amazonaws.com/private_keys/deployer.pem &gt; ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 set +e
