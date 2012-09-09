@@ -12,7 +12,9 @@
       </args>
     </description>
   </temporaryOfflineCause>
-  <disabledAdministrativeMonitors/>
+  <disabledAdministrativeMonitors>
+    <string>hudson.diagnosis.ReverseProxySetupMonitor</string>
+  </disabledAdministrativeMonitors>
   <version>1.479</version>
   <numExecutors>1</numExecutors>
   <mode>NORMAL</mode>
@@ -42,7 +44,7 @@
       <instanceCap>2147483647</instanceCap>
       <templates>
         <hudson.plugins.ec2.SlaveTemplate>
-          <ami>ami-82fa58eb</ami>
+          <ami>ami-999829f0</ami>
           <description>build-slave</description>
           <zone></zone>
           <securityGroups>ssh</securityGroups>
@@ -55,6 +57,8 @@ sudo apt-get -q update
 sudo apt-get -q -y upgrade
 sudo apt-get -q update
 sudo apt-get install -q -y openjdk-7-jdk openjdk-7-jre-headless git gcc build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion libqt4-dev libqtwebkit-dev xvfb firefox mysql-client libcurl3-dev libmysql-ruby libmysqlclient-dev
+echo &quot;Australia/Melbourne&quot; | sudo tee /etc/timezone
+sudo dpkg-reconfigure --frontend noninteractive tzdata
 curl -L https://s3.amazonaws.com/private_keys/deployer.pem &gt; ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 set +e
@@ -97,6 +101,42 @@ sudo apt-get -q update
 sudo apt-get -q -y upgrade
 sudo apt-get -q update
 sudo apt-get install -q -y openjdk-7-jdk openjdk-7-jre-headless git gcc build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion libqt4-dev libqtwebkit-dev xvfb firefox mysql-client
+curl -L https://s3.amazonaws.com/private_keys/deployer.pem &gt; ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
+set +e
+ssh -o StrictHostKeyChecking=no git@github.com
+set -e
+mkdir -p ~/workspace
+cp ~/.ssh/id_rsa ~/workspace/deployer.pem
+curl -L https://get.rvm.io | bash -s stable
+source &quot;$HOME/.rvm/scripts/rvm&quot;
+command rvm install 1.9.3
+exit 0</initScript>
+      <remoteAdmin>ubuntu</remoteAdmin>
+      <rootCommandPrefix></rootCommandPrefix>
+      <jvmopts></jvmopts>
+      <stopOnTerminate>false</stopOnTerminate>
+      <sshPort>22</sshPort>
+    </hudson.plugins.ec2.EC2Slave>
+    <hudson.plugins.ec2.EC2Slave>
+      <name>i-12f86468</name>
+      <description>build-slave</description>
+      <remoteFS></remoteFS>
+      <numExecutors>1</numExecutors>
+      <mode>NORMAL</mode>
+      <retentionStrategy class="hudson.plugins.ec2.EC2RetentionStrategy"/>
+      <launcher class="hudson.plugins.ec2.ssh.EC2UnixLauncher">
+        <FAILED>-1</FAILED>
+        <SAMEUSER>0</SAMEUSER>
+        <RECONNECT>-2</RECONNECT>
+      </launcher>
+      <label></label>
+      <nodeProperties/>
+      <initScript>#!/bin/bash -ex
+sudo apt-get -q update
+sudo apt-get -q -y upgrade
+sudo apt-get -q update
+sudo apt-get install -q -y openjdk-7-jdk openjdk-7-jre-headless git gcc build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion libqt4-dev libqtwebkit-dev xvfb firefox mysql-client libcurl3-dev libmysql-ruby libmysqlclient-dev
 curl -L https://s3.amazonaws.com/private_keys/deployer.pem &gt; ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 set +e
