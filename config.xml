@@ -13,7 +13,7 @@
     </description>
   </temporaryOfflineCause>
   <disabledAdministrativeMonitors/>
-  <version>1.480</version>
+  <version>1.479</version>
   <numExecutors>1</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
@@ -34,7 +34,7 @@
   <clouds>
     <hudson.plugins.ec2.EC2Cloud>
       <name>ec2-us-east-1</name>
-      <accessId>AKIAIB3JD5B24BFQEDVQ</accessId>
+      <accessId>AKIAJNXAVDKSFEVNHRDQ</accessId>
       <secretKey>S7S8aTO6LHdkSOc/Ts88HfokaZ5blJH3KWnDbKhAB78aAAgzfW2UPozz3q2HEFCgJwyh9oaqP0mB0OH2NoRyZg==</secretKey>
       <privateKey>
         <privateKey>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</privateKey>
@@ -42,7 +42,7 @@
       <instanceCap>2147483647</instanceCap>
       <templates>
         <hudson.plugins.ec2.SlaveTemplate>
-          <ami>ami-1ded5b74</ami>
+          <ami>ami-82fa58eb</ami>
           <description>build-slave</description>
           <zone></zone>
           <securityGroups>ssh</securityGroups>
@@ -51,47 +51,11 @@
           <type>M1Small</type>
           <labels></labels>
           <initScript>#!/bin/bash -ex
-sudo yum install -y git gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel
-sudo yum install -y ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
-sudo yum -y groupinstall &quot;X Window System&quot;
-sudo yum -y groupinstall &quot;Fonts&quot;
-sudo yum install -y sqlite-devel sqlite Xvfb firefox xwd mysql mysql-devel
-rpmquery atrpms-repo
-if [ &quot;$?&quot; -eq &quot;1&quot; ]; then sudo rpm -i http://dl.atrpms.net/el6-x86_64/atrpms/stable/atrpms-repo-6-5.el6.x86_64.rpm; fi
-sudo yum install -y --enablerepo=atrpms-testing qt47-webkit-devel
-grep &quot;export QMAKE=&quot; .bashrc
-if [ &quot;$?&quot; -eq &quot;1&quot; ]
-  then
-    echo &apos;export QMAKE=/usr/bin/qmake-qt47&apos; &gt;&gt; ~/.bashrc
-    export QMAKE=/usr/bin/qmake-qt47
-fi
-echo &apos;-----BEGIN RSA PRIVATE KEY-----
-MIIEoAIBAAKCAQEAyrBOE3zDQMcoRi9no60foxqEy7EVmAARowko6rERDXCp5tKr
-Y3dOpk0wDyuZgvvq2gfaVRaUuwo1AJwJk43sFb6ZVxRwNZLjIF2dFV+RjQKy1NnP
-d9ymrZacIOyQXLzFUWsM59JPA6v8zznF826RSBuQIIGESz9n0lhICfO4oIq62Bex
-llh9O/vU71EKnzFxqq2StNCd5q/tit7AK0GiHnm2OyufBQrGhUjVrCDmXx2X9XX7
-7swHky56z4ZgZk1XdC4EEHE4WariMzryjBPldCXkQGq5x97IC35aeCCVcyDAkQ+5
-HRxJK/Ja2RYy8f5bsmYRcI06suWGePUQO48BjwIBIwKCAQAuVC8aZaj43RCFEiZR
-TCR9DWAujuBdQdglQ+wYYvyVW5SMh+ypBVPOPYdT7LVfxI1zqgYE0fYcH5cWFQmA
-z/tyrzj99gsE7l/M4jKIit9wsCjgMckFdENa4Ji3EYAVMnY+ft5g350IJ0+6Vlkh
-st9g8Ft1JOsJ4ptjR2DsVPcAH02Cka+Z9tfxI6ZhXDyYC7Y5MdDKpn2ofzRt0hGm
-uWh0atGQnzqbczMMui0Um846L4xqJHtanRBjmk20bLpJ9oajY9M+SdJ1jT1ek5TW
-I9V5R4vkYOiausqqzDBWuBQFqr+S/wun1PUm9hEhAMF/KtcyNV/eni+GYtl04Kph
-MlYLAoGBAOncfTDMOLVjaiKkgcE3O+0fUXlQZLym+IIdp491LD86eQR75z6em0m0
-HuIjNe9AZiHxLl+Ez9719vUFQV3bHOun9/+6N3CitkLGkORYjbBauymFtNFkZ/Xh
-Av39KDljTgh14Mj9VmbgZLdGLyBzfdZ6qEVW8ygvCekpEzj4mpn3AoGBAN3gXSCI
-h9cZlbpg28BOwkdRIift03t+iuYMwCN8qjnmrVzmi7/+V315e25OwVDgJ2+z6AC9
-jQDpdHHU6VOHmd7BYUglts70qrLu5GMKqW8m0bazje6+hZt/Pgj/kwR3B7H4Ex0h
-gjHBGRiig8PyJRe8FEirpgKX6yXwiu3ZuC8pAoGAFAuVs7m7t8axU20vsXnDTtbM
-eBzVb0GDA9an9lqAIq09kquI2XtPI5MYlwpVFIHc3laAUVSG2Ji9ZXV6oaURG4Nt
-B0p5x9NutUQ4ThY4B81DPhLGWxc8HGO+bYq6Tg/TfRFrCenUNLQl49LQ1uVT7c//
-y23aU+bGVdBSGtN690ECgYA5Dc7N2fcLbPqdo+C8bAYSVrEC9AMuYl47J9miuagd
-hHW4zZGmZfk9haNlgfcyDcD/d2eLKW1mom5mafLa9vuuTvvCGFOUTYr6z7cSJ1Aj
-5WkgWg6N2ThMjm8JoM4IdmEQgZ6D1WqfFGWJ/edeRZSCcjEaAEChlMdwJ+k12OY4
-AwKBgAKjP2ZxCaGkZkd3ihBu06WzlnZYHU9i2IGLOhqB5IvacuL+MpHlq8whxwxx
-r6pUQ+A77WVHgdG+1m1EdLvdMkeYTEhYz0CX11kAsg5Hqtx0NzDizDYbOLCtZ91j
-iUwmvLgD9bJvwsMc7X0ywkU+e63yCz3ZFLuEUTqPsOlPL5Gu
------END RSA PRIVATE KEY-----&apos; &gt; ~/.ssh/id_rsa
+sudo apt-get -q update
+sudo apt-get -q -y upgrade
+sudo apt-get -q update
+sudo apt-get install -q -y openjdk-7-jdk openjdk-7-jre-headless git gcc build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion libqt4-dev libqtwebkit-dev xvfb firefox mysql-client libcurl3-dev libmysql-ruby libmysqlclient-dev
+curl -L https://s3.amazonaws.com/private_keys/deployer.pem &gt; ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 set +e
 ssh -o StrictHostKeyChecking=no git@github.com
@@ -104,7 +68,7 @@ command rvm install 1.9.3
 exit 0</initScript>
           <userData></userData>
           <numExecutors>1</numExecutors>
-          <remoteAdmin>ec2-user</remoteAdmin>
+          <remoteAdmin>ubuntu</remoteAdmin>
           <rootCommandPrefix></rootCommandPrefix>
           <jvmopts></jvmopts>
           <stopOnTerminate>false</stopOnTerminate>
@@ -113,7 +77,44 @@ exit 0</initScript>
       <region>us-east-1</region>
     </hudson.plugins.ec2.EC2Cloud>
   </clouds>
-  <slaves/>
+  <slaves>
+    <hudson.plugins.ec2.EC2Slave>
+      <name>i-2636ab5c</name>
+      <description>build-slave</description>
+      <remoteFS></remoteFS>
+      <numExecutors>1</numExecutors>
+      <mode>NORMAL</mode>
+      <retentionStrategy class="hudson.plugins.ec2.EC2RetentionStrategy"/>
+      <launcher class="hudson.plugins.ec2.ssh.EC2UnixLauncher">
+        <FAILED>-1</FAILED>
+        <SAMEUSER>0</SAMEUSER>
+        <RECONNECT>-2</RECONNECT>
+      </launcher>
+      <label></label>
+      <nodeProperties/>
+      <initScript>#!/bin/bash -ex
+sudo apt-get -q update
+sudo apt-get -q -y upgrade
+sudo apt-get -q update
+sudo apt-get install -q -y openjdk-7-jdk openjdk-7-jre-headless git gcc build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion libqt4-dev libqtwebkit-dev xvfb firefox mysql-client
+curl -L https://s3.amazonaws.com/private_keys/deployer.pem &gt; ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
+set +e
+ssh -o StrictHostKeyChecking=no git@github.com
+set -e
+mkdir -p ~/workspace
+cp ~/.ssh/id_rsa ~/workspace/deployer.pem
+curl -L https://get.rvm.io | bash -s stable
+source &quot;$HOME/.rvm/scripts/rvm&quot;
+command rvm install 1.9.3
+exit 0</initScript>
+      <remoteAdmin>ubuntu</remoteAdmin>
+      <rootCommandPrefix></rootCommandPrefix>
+      <jvmopts></jvmopts>
+      <stopOnTerminate>false</stopOnTerminate>
+      <sshPort>22</sshPort>
+    </hudson.plugins.ec2.EC2Slave>
+  </slaves>
   <quietPeriod>5</quietPeriod>
   <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
   <views>
