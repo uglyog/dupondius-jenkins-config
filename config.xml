@@ -42,7 +42,7 @@
       <instanceCap>2147483647</instanceCap>
       <templates>
         <hudson.plugins.ec2.SlaveTemplate>
-          <ami>ami-82fa58eb</ami>
+          <ami>ami-999829f0</ami>
           <description>build-slave</description>
           <zone></zone>
           <securityGroups>ssh</securityGroups>
