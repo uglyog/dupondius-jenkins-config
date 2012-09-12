@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: kiy0taka
+Build-Jdk: 1.6.0_33
+Extension-Name: grails
+Implementation-Title: grails
+Implementation-Version: 1.6.3
+Group-Id: org.jvnet.hudson.plugins
+Short-Name: grails
+Long-Name: Jenkins Grails plugin
+Url: http://wiki.jenkins-ci.org/display/JENKINS/Grails+Plugin
+Plugin-Version: 1.6.3
+Hudson-Version: 1.425
+Jenkins-Version: 1.425
+Plugin-Developers: Jeff Brown:jeffg2one:,Kiyotaka Oku:kiy0taka:
+
