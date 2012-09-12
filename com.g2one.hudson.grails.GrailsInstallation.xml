@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.g2one.hudson.grails.GrailsInstallation_-DescriptorImpl>
+  <helpRedirect/>
+  <installations>
+    <com.g2one.hudson.grails.GrailsInstallation>
+      <name>grails</name>
+      <home></home>
+      <properties>
+        <hudson.tools.InstallSourceProperty>
+          <installers>
+            <com.g2one.hudson.grails.GrailsInstaller>
+              <id>2.1.0</id>
+            </com.g2one.hudson.grails.GrailsInstaller>
+          </installers>
+        </hudson.tools.InstallSourceProperty>
+      </properties>
+    </com.g2one.hudson.grails.GrailsInstallation>
+  </installations>
+</com.g2one.hudson.grails.GrailsInstallation_-DescriptorImpl>
