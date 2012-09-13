@@ -66,7 +66,7 @@
 </command>
     </hudson.tasks.Shell>
     <com.g2one.hudson.grails.GrailsBuilder>
-      <targets>&quot;test-app :unit --stacktrace&quot;</targets>
+      <targets>clean &quot;test-app :unit --stacktrace&quot;</targets>
       <name>grails</name>
       <grailsWorkDir></grailsWorkDir>
       <projectWorkDir></projectWorkDir>
@@ -84,7 +84,7 @@
       <latestOnly>false</latestOnly>
     </hudson.tasks.ArtifactArchiver>
     <hudson.tasks.junit.JUnitResultArchiver>
-      <testResults>target/test-reports/**/*.xml</testResults>
+      <testResults>target/test-reports/*.xml</testResults>
       <keepLongStdio>false</keepLongStdio>
       <testDataPublishers>
         <hudson.plugins.claim.ClaimTestDataPublisher/>
@@ -110,7 +110,7 @@
             <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
               <properties>PIPELINE_BUILD_NUMBER=$BUILD_NUMBER
-PIPELINE_VERSION=v0.0.$BUILD_NUMBER</properties>
+PIPELINE_VERSION=0.0.$BUILD_NUMBER</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
           </configs>
           <projects>Acceptance_Test</projects>
