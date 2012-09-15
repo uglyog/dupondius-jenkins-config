@@ -77,6 +77,7 @@
           <initScript>#!/bin/bash -ex
 sudo yum install -y git gcc-c++ patch readline readline-devel zlib zlib-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel
 sudo yum install -y java-1.6.0-openjdk java-1.6.0-openjdk-devel
+sudo cp /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/lib/tools.jar /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/ext/tools.jar
 sudo yum -y groupinstall &quot;X Window System&quot;
 sudo yum -y groupinstall &quot;Fonts&quot;
 sudo yum install -y sqlite-devel sqlite Xvfb firefox xwd mysql mysql-devel
@@ -119,7 +120,11 @@ exit 0</initScript>
           <remoteAdmin>ec2-user</remoteAdmin>
           <rootCommandPrefix></rootCommandPrefix>
           <jvmopts></jvmopts>
+          <subnetId></subnetId>
+          <idleTerminationMinutes>30</idleTerminationMinutes>
+          <instanceCap>0</instanceCap>
           <stopOnTerminate>false</stopOnTerminate>
+          <usePrivateDnsName>false</usePrivateDnsName>
         </hudson.plugins.ec2.SlaveTemplate>
       </templates>
       <region>us-east-1</region>
@@ -158,5 +163,15 @@ exit 0</initScript>
   <slaveAgentPort>0</slaveAgentPort>
   <label></label>
   <nodeProperties/>
-  <globalNodeProperties/>
+  <globalNodeProperties>
+    <hudson.tools.ToolLocationNodeProperty>
+      <locations>
+        <hudson.tools.ToolLocationNodeProperty_-ToolLocation>
+          <type>com.g2one.hudson.grails.GrailsInstallation$DescriptorImpl</type>
+          <name>grails</name>
+          <home>$HOME/tools/Grails/grails/</home>
+        </hudson.tools.ToolLocationNodeProperty_-ToolLocation>
+      </locations>
+    </hudson.tools.ToolLocationNodeProperty>
+  </globalNodeProperties>
 </hudson>

@@ -37,6 +37,7 @@
     <pruneBranches>false</pruneBranches>
     <remotePoll>false</remotePoll>
     <ignoreNotifyCommit>false</ignoreNotifyCommit>
+    <useShallowClone>false</useShallowClone>
     <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
     <gitTool>Default</gitTool>
     <submoduleCfg class="list"/>
@@ -80,7 +81,7 @@ fi
     <hudson.tasks.Shell>
       <command>mkdir -p target
 curl -L http://ci.grails.dupondi.us:8080/jnlpJars/jenkins-cli.jar &gt; target/jenkins-cli.jar
-UPSTREAM_BUILD=`java -jar target/jenkins-cli.jar groovy scripts/get-upstream-build-artifact.groovy`
+UPSTREAM_BUILD=`java -jar target/jenkins-cli.jar groovy scripts/get-upstream-build-artifact.groovy $JOB_NAME $BUILD_NUMBER`
 if [ &quot;$UPSTREAM_BUILD&quot; == &quot;ERROR - no upstreamCause found&quot; ]; then exit 1; fi
 curl -L http://ci.grails.dupondi.us:8080/job/$UPSTREAM_BUILD/artifact/target/dupondius-grails-skeleton-$PIPELINE_VERSION.war &gt; target/dupondius-grails-skeleton-$PIPELINE_VERSION.war
 scp -o StrictHostKeyChecking=no target/*.war deployer@qa.grails.dupondi.us:/var/tmp

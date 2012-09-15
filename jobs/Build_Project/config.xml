@@ -37,6 +37,7 @@
     <pruneBranches>false</pruneBranches>
     <remotePoll>false</remotePoll>
     <ignoreNotifyCommit>false</ignoreNotifyCommit>
+    <useShallowClone>false</useShallowClone>
     <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
     <gitTool>Default</gitTool>
     <submoduleCfg class="list"/>
@@ -63,10 +64,11 @@
   <builders>
     <hudson.tasks.Shell>
       <command>env | sort
+rm -rf target
 </command>
     </hudson.tasks.Shell>
     <com.g2one.hudson.grails.GrailsBuilder>
-      <targets>clean &quot;test-app :unit --stacktrace&quot; dbm-update &quot;test-app :integration --stacktrace&quot;</targets>
+      <targets>clean dbm-update  &quot;test-app :unit :integration --stacktrace&quot;</targets>
       <name>grails</name>
       <grailsWorkDir></grailsWorkDir>
       <projectWorkDir></projectWorkDir>

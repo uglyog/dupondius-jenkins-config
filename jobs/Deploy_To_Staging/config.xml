@@ -11,7 +11,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty>
-      <projectUrl>https://github.com/uglyog/grails</projectUrl>
+      <projectUrl>https://github.com/uglyog/dupondius-grails-skeleton/</projectUrl>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
   <scm class="hudson.plugins.git.GitSCM">
@@ -20,7 +20,7 @@
       <hudson.plugins.git.UserRemoteConfig>
         <name></name>
         <refspec></refspec>
-        <url>git@github.com:uglyog/grails.git</url>
+        <url>git@github.com:uglyog/dupondius-grails-skeleton.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -37,6 +37,7 @@
     <pruneBranches>false</pruneBranches>
     <remotePoll>false</remotePoll>
     <ignoreNotifyCommit>false</ignoreNotifyCommit>
+    <useShallowClone>false</useShallowClone>
     <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
     <gitTool>Default</gitTool>
     <submoduleCfg class="list"/>
@@ -71,32 +72,35 @@ fi
 
 if [ $PIPELINE_VERSION ]
   then
-    echo Checking out $PIPELINE_VERSION ...
-    git checkout $PIPELINE_VERSION
+    echo Checking out v$PIPELINE_VERSION ...
+    git checkout v$PIPELINE_VERSION
     echo HEAD is now: `git log --decorate --format=format:&apos;%H %d&apos; --tags | grep \(HEAD`
 fi
-
-mkdir -p reports
-rm -rf reports/*</command>
+</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>
-bundle install
-cap staging deploy</command>
+      <command>mkdir -p target
+curl -L http://ci.grails.dupondi.us:8080/jnlpJars/jenkins-cli.jar &gt; target/jenkins-cli.jar
+UPSTREAM_BUILD=`java -jar target/jenkins-cli.jar groovy scripts/get-upstream-build-artifact.groovy $JOB_NAME $BUILD_NUMBER`
+if [ &quot;$UPSTREAM_BUILD&quot; == &quot;ERROR - no upstreamCause found&quot; ]; then exit 1; fi
+curl -L http://ci.grails.dupondi.us:8080/job/$UPSTREAM_BUILD/artifact/target/dupondius-grails-skeleton-$PIPELINE_VERSION.war &gt; target/dupondius-grails-skeleton-$PIPELINE_VERSION.war
+scp -o StrictHostKeyChecking=no target/*.war deployer@staging.grails.dupondi.us:/var/tmp
+ssh deployer@staging.grails.dupondi.us &quot;chown :tomcat /var/tmp/dupondius-grails-skeleton-$PIPELINE_VERSION.war; mv /var/tmp/dupondius-grails-skeleton-$PIPELINE_VERSION.war /var/lib/tomcat7/webapps/ROOT.war&quot;</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>sleep 20
-curl http://staging.grails.dupondi.us/status/heart_beat</command>
+      <command>sleep 120
+curl -fsS http://staging.grails.dupondi.us:8080/status</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>RAILS_ENV=cucumber rake db:migrate cucumber:staging --trace</command>
+      <command>APP_VERSION=`curl -fsS http://staging.grails.dupondi.us:8080/status/version`
+if [ &quot;$APP_VERSION&quot; != &quot;$PIPELINE_VERSION&quot; ]
+  then
+    echo &quot;Expected $PIPELINE_VERSION but got $APP_VERSION instead&quot;
+    exit 1
+fi</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.tasks.ArtifactArchiver>
-      <artifacts>reports/**/*.*</artifacts>
-      <latestOnly>false</latestOnly>
-    </hudson.tasks.ArtifactArchiver>
     <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
       <downstreamProjectNames>Deploy_To_Production</downstreamProjectNames>
     </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
@@ -106,14 +110,6 @@ curl http://staging.grails.dupondi.us/status/heart_beat</command>
     <hudson.plugins.ansicolor.AnsiColorBuildWrapper>
       <colorMapName>xterm</colorMapName>
     </hudson.plugins.ansicolor.AnsiColorBuildWrapper>
-    <ruby-proxy-object>
-      <ruby-object ruby-class="Jenkins::Plugin::Proxies::BuildWrapper" pluginid="rvm">
-        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
-        <object ruby-class="RvmWrapper" pluginid="rvm">
-          <impl pluginid="rvm" ruby-class="String">ruby-1.9.3</impl>
-        </object>
-      </ruby-object>
-    </ruby-proxy-object>
     <org.jenkinsci.plugins.xvfb.XvfbBuildWrapper>
       <installationName>system</installationName>
       <screen>1024x768x24</screen>
