@@ -4,13 +4,13 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-      <version>1.399</version>
+      <version>1.424</version>
   </parent>
   
   <artifactId>ec2</artifactId>
-  <version>1.16</version>
+  <version>1.17</version>
   <packaging>hpi</packaging>
-  <name>Jenkins Amazon EC2 plugin</name>
+  <name>Amazon EC2 plugin</name>
   <url>http://wiki.jenkins-ci.org/display/JENKINS/Amazon+EC2+Plugin</url>
 
   <scm>
@@ -39,15 +39,17 @@
   </dependencies>
 
   <developers>
-    <developer>
-      <id>kohsuke</id>
-      <name>Kohsuke Kawaguchi</name>
-      <email>kkawaguchi@cloudbees.com</email>
-    </developer>
+	<!-- current maintainer -->
     <developer>
       <id>francisu</id>
       <name>Francis Upton IV</name>
       <email>francis@oaklandsoftware.com</email>
+    </developer>
+	<!-- kohsuke did the original implementation -->
+    <developer>
+      <id>kohsuke</id>
+      <name>Kohsuke Kawaguchi</name>
+      <email>kkawaguchi@cloudbees.com</email>
     </developer>
   </developers>
 

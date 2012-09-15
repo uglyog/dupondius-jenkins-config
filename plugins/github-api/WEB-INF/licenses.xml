@@ -1,15 +1,14 @@
 <l:dependencies xmlns:l='licenses'>
-  <l:dependency name='github-api' groupId='org.jenkins-ci.plugins' artifactId='github-api' version='1.28' url='https://wiki.jenkins-ci.org/display/JENKINS/GitHub+API+Plugin'>
+  <l:dependency name='github-api' groupId='org.jenkins-ci.plugins' artifactId='github-api' version='1.32' url='https://wiki.jenkins-ci.org/display/JENKINS/GitHub+API+Plugin'>
     <l:description />
+  </l:dependency>
+  <l:dependency name='GitHub API for Java' groupId='org.kohsuke' artifactId='github-api' version='1.32' url='http://github-api.kohsuke.org/'>
+    <l:description>GitHub API for Java</l:description>
+    <l:license name='MIT license' url='http://www.opensource.org/licenses/mit-license.php' />
   </l:dependency>
   <l:dependency name='HttpClient' groupId='commons-httpclient' artifactId='commons-httpclient' version='3.1' url='http://jakarta.apache.org/httpcomponents/httpclient-3.x/'>
     <l:description>The HttpClient  component supports the client-side of RFC 1945 (HTTP/1.0)  and RFC 2616 (HTTP/1.1) , several related specifications (RFC 2109 (Cookies) , RFC 2617 (HTTP Authentication) , etc.), and provides a framework by which new request types (methods) or HTTP extensions can be created easily.</l:description>
     <l:license name='Apache License' url='http://www.apache.org/licenses/LICENSE-2.0' />
-  </l:dependency>
-  <l:dependency name='Data Mapper for Jackson' groupId='org.codehaus.jackson' artifactId='jackson-mapper-asl' version='1.5.0' url='http://jackson.codehaus.org'>
-    <l:description>Data Mapper package is a high-performance data binding package
-built on Jackson JSON processor</l:description>
-    <l:license name='The Apache Software License, Version 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt' />
   </l:dependency>
   <l:dependency name='Commons IO' groupId='commons-io' artifactId='commons-io' version='1.4' url='http://commons.apache.org/io/'>
     <l:description>Commons-IO contains utility classes, stream implementations, file filters, file comparators and endian classes.</l:description>
@@ -28,6 +27,11 @@ built on Jackson JSON processor</l:description>
     <l:description>SAC is a standard interface for CSS parsers.</l:description>
     <l:license name='The W3C Software License' url='http://www.w3.org/Consortium/Legal/copyright-software-19980720' />
   </l:dependency>
+  <l:dependency name='Data Mapper for Jackson' groupId='org.codehaus.jackson' artifactId='jackson-mapper-asl' version='1.9.9' url='http://jackson.codehaus.org'>
+    <l:description>Data Mapper package is a high-performance data binding package
+built on Jackson JSON processor</l:description>
+    <l:license name='The Apache Software License, Version 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt' />
+  </l:dependency>
   <l:dependency name='Xalan Java Serializer' groupId='xalan' artifactId='serializer' version='2.7.1' url='http://xml.apache.org/xalan-j/'>
     <l:description>Serializer to write out XML, HTML etc. as a stream of characters from an input DOM or from input
     SAX events.</l:description>
@@ -40,13 +44,9 @@ built on Jackson JSON processor</l:description>
     the command line, in an applet or a servlet, or as a module in other program.</l:description>
     <l:license name='The Apache Software License, Version 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt' />
   </l:dependency>
-  <l:dependency name='Jackson' groupId='org.codehaus.jackson' artifactId='jackson-core-asl' version='1.5.0' url='http://jackson.codehaus.org'>
+  <l:dependency name='Jackson' groupId='org.codehaus.jackson' artifactId='jackson-core-asl' version='1.9.9' url='http://jackson.codehaus.org'>
     <l:description>Jackson is a high-performance JSON processor (parser, generator)</l:description>
     <l:license name='The Apache Software License, Version 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt' />
-  </l:dependency>
-  <l:dependency name='GitHub API for Java' groupId='org.kohsuke' artifactId='github-api' version='1.28' url='http://github-api.kohsuke.org/'>
-    <l:description>GitHub API for Java</l:description>
-    <l:license name='MIT license' url='http://www.opensource.org/licenses/mit-license.php' />
   </l:dependency>
   <l:dependency name='HtmlUnit' groupId='org.jvnet.hudson' artifactId='htmlunit' version='2.6-hudson-2' url='http://htmlunit.sourceforge.net'>
     <l:description>A headless browser intended for use in testing web-based applications.</l:description>

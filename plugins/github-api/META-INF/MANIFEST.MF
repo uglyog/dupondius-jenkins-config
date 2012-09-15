@@ -2,15 +2,15 @@ Manifest-Version: 1.0
 Archiver-Version: Plexus Archiver
 Created-By: Apache Maven
 Built-By: kohsuke
-Build-Jdk: 1.6.0_26
+Build-Jdk: 1.6.0_20
 Extension-Name: github-api
 Implementation-Title: github-api
-Implementation-Version: 1.28
+Implementation-Version: 1.32
 Group-Id: org.jenkins-ci.plugins
 Short-Name: github-api
 Long-Name: github-api
 Url: https://wiki.jenkins-ci.org/display/JENKINS/GitHub+API+Plugin
-Plugin-Version: 1.28
+Plugin-Version: 1.32
 Hudson-Version: 1.409
 Jenkins-Version: 1.409
 Plugin-Developers: 
