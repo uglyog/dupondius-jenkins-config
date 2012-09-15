@@ -79,7 +79,7 @@ fi
 sed -i s/app.version=.*/app.version=$PIPELINE_VERSION/ application.properties </command>
     </hudson.tasks.Shell>
     <com.g2one.hudson.grails.GrailsBuilder>
-      <targets>&quot;war --stacktrace&quot;</targets>
+      <targets>&quot;prod war --stacktrace&quot;</targets>
       <name>grails</name>
       <grailsWorkDir></grailsWorkDir>
       <projectWorkDir></projectWorkDir>
@@ -90,6 +90,14 @@ sed -i s/app.version=.*/app.version=$PIPELINE_VERSION/ application.properties </
       <nonInteractive>true</nonInteractive>
       <useWrapper>false</useWrapper>
     </com.g2one.hudson.grails.GrailsBuilder>
+    <hudson.tasks.Shell>
+      <command>scp -o StrictHostKeyChecking=no target/*.war deployer@canary.grails.dupondi.us:/var/tmp
+ssh deployer@canary.grails.dupondi.us &quot;chown tomcat:tomcat /var/tmp/dupondius-grails-skeleton-$PIPELINE_VERSION.war; mv /var/tmp/dupondius-grails-skeleton-$PIPELINE_VERSION.war /var/lib/tomcat7/webapps/ROOT.war&quot;</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>sleep 120
+curl -fsS http://canary.grails.dupondi.us:8080</command>
+    </hudson.tasks.Shell>
   </builders>
   <publishers>
     <hudson.tasks.ArtifactArchiver>
