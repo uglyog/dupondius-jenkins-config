@@ -1,10 +1,6 @@
 <l:dependencies xmlns:l='licenses'>
-  <l:dependency name='github-api' groupId='org.jenkins-ci.plugins' artifactId='github-api' version='1.32' url='https://wiki.jenkins-ci.org/display/JENKINS/GitHub+API+Plugin'>
+  <l:dependency name='github-api' groupId='org.jenkins-ci.plugins' artifactId='github-api' version='1.33' url='https://wiki.jenkins-ci.org/display/JENKINS/GitHub+API+Plugin'>
     <l:description />
-  </l:dependency>
-  <l:dependency name='GitHub API for Java' groupId='org.kohsuke' artifactId='github-api' version='1.32' url='http://github-api.kohsuke.org/'>
-    <l:description>GitHub API for Java</l:description>
-    <l:license name='MIT license' url='http://www.opensource.org/licenses/mit-license.php' />
   </l:dependency>
   <l:dependency name='HttpClient' groupId='commons-httpclient' artifactId='commons-httpclient' version='3.1' url='http://jakarta.apache.org/httpcomponents/httpclient-3.x/'>
     <l:description>The HttpClient  component supports the client-side of RFC 1945 (HTTP/1.0)  and RFC 2616 (HTTP/1.1) , several related specifications (RFC 2109 (Cookies) , RFC 2617 (HTTP Authentication) , etc.), and provides a framework by which new request types (methods) or HTTP extensions can be created easily.</l:description>
@@ -58,6 +54,10 @@ built on Jackson JSON processor</l:description>
     a complete framework for building parser components and configurations that is extremely
     modular and easy to program.</l:description>
     <l:license name='The Apache Software License, Version 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt' />
+  </l:dependency>
+  <l:dependency name='GitHub API for Java' groupId='org.kohsuke' artifactId='github-api' version='1.33' url='http://github-api.kohsuke.org/'>
+    <l:description>GitHub API for Java</l:description>
+    <l:license name='MIT license' url='http://www.opensource.org/licenses/mit-license.php' />
   </l:dependency>
   <l:dependency name='CSS Parser' groupId='net.sourceforge.cssparser' artifactId='cssparser' version='0.9.5' url='http://cssparser.sourceforge.net/'>
     <l:description>A CSS parser which implements SAC (the Simple API for CSS).</l:description>
