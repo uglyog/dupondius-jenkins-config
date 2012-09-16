@@ -91,7 +91,7 @@ bundle exec rake db:migrate spec --trace</command>
       <tagsToPush>
         <hudson.plugins.git.GitPublisher_-TagToPush>
           <targetRepoName>origin</targetRepoName>
-          <tagName>v0.1.$BUILD_NUMBER</tagName>
+          <tagName>v0.2.$BUILD_NUMBER</tagName>
           <createTag>true</createTag>
         </hudson.plugins.git.GitPublisher_-TagToPush>
       </tagsToPush>
@@ -104,7 +104,7 @@ bundle exec rake db:migrate spec --trace</command>
             <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
               <properties>PIPELINE_BUILD_NUMBER=$BUILD_NUMBER
-PIPELINE_VERSION=v0.1.$BUILD_NUMBER</properties>
+PIPELINE_VERSION=v0.2.$BUILD_NUMBER</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
           </configs>
           <projects>Acceptance_Test</projects>
