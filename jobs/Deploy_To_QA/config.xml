@@ -97,7 +97,7 @@ curl http://qa.testci6.dupondi.us/status/heart_beat</command>
       <latestOnly>false</latestOnly>
     </hudson.tasks.ArtifactArchiver>
     <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
-      <downstreamProjectNames>Deploy_To_Staging</downstreamProjectNames>
+      <downstreamProjectNames>Deploy_To_Production</downstreamProjectNames>
     </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
   </publishers>
   <buildWrappers>
