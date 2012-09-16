@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>Setup an environment for deployment</description>
+  <description>Setup an environment for deployment (No-op for Grails stack)</description>
   <logRotator>
     <daysToKeep>-1</daysToKeep>
     <numToKeep>20</numToKeep>
@@ -11,7 +11,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty>
-      <projectUrl>https://github.com/nadnerb/dashboard/</projectUrl>
+      <projectUrl>https://github.com/uglyog/dupondius-grails-skeleton/</projectUrl>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
@@ -39,7 +39,7 @@
       <hudson.plugins.git.UserRemoteConfig>
         <name></name>
         <refspec></refspec>
-        <url>git@github.com:nadnerb/dashboard.git</url>
+        <url>git@github.com:uglyog/dupondius-grails-skeleton.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -56,6 +56,7 @@
     <pruneBranches>false</pruneBranches>
     <remotePoll>false</remotePoll>
     <ignoreNotifyCommit>false</ignoreNotifyCommit>
+    <useShallowClone>false</useShallowClone>
     <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
     <gitTool>Default</gitTool>
     <submoduleCfg class="list"/>
@@ -94,11 +95,7 @@ echo HEAD is now: `git log --decorate --format=format:&apos;%H %d&apos; --tags |
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>export LAUNCHPAD_ENABLED=true
-export LAUNCHPAD_JOBS=true
-export AWS_ENABLED=true
-bundle install
-PIPELINE_VERSION=$TAG cap HOSTS=$HOSTNAME.dupondius.dupondi.us $ENVIRONMENT_TO_DEPLOY deploy:setup</command>
+      <command>echo NOOP</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
@@ -107,20 +104,5 @@ PIPELINE_VERSION=$TAG cap HOSTS=$HOSTNAME.dupondius.dupondi.us $ENVIRONMENT_TO_D
     <hudson.plugins.ansicolor.AnsiColorBuildWrapper>
       <colorMapName>xterm</colorMapName>
     </hudson.plugins.ansicolor.AnsiColorBuildWrapper>
-    <ruby-proxy-object>
-      <ruby-object ruby-class="Jenkins::Plugin::Proxies::BuildWrapper" pluginid="rvm">
-        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
-        <object ruby-class="RvmWrapper" pluginid="rvm">
-          <impl pluginid="rvm" ruby-class="String">ruby-1.9.3@dashboard</impl>
-        </object>
-      </ruby-object>
-    </ruby-proxy-object>
-    <org.jenkinsci.plugins.xvfb.XvfbBuildWrapper>
-      <installationName>system</installationName>
-      <screen>1024x768x24</screen>
-      <debug>false</debug>
-      <timeout>0</timeout>
-      <additionalOptions></additionalOptions>
-    </org.jenkinsci.plugins.xvfb.XvfbBuildWrapper>
   </buildWrappers>
 </project>
