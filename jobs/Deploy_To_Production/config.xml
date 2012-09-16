@@ -91,7 +91,7 @@ cap production deploy</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 20
-curl http://production.dupondi.us/status/heart_beat</command>
+curl http://production.dupondius.dupondi.us/status/heart_beat</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 120
@@ -111,10 +111,10 @@ RAILS_ENV=cucumber rake db:migrate cucumber:production --trace</command>
     </hudson.plugins.ansicolor.AnsiColorBuildWrapper>
     <ruby-proxy-object>
       <ruby-object ruby-class="Jenkins::Plugin::Proxies::BuildWrapper" pluginid="rvm">
-        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
         <object ruby-class="RvmWrapper" pluginid="rvm">
           <impl pluginid="rvm" ruby-class="String">ruby-1.9.3@dashboard</impl>
         </object>
+        <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
       </ruby-object>
     </ruby-proxy-object>
     <org.jenkinsci.plugins.xvfb.XvfbBuildWrapper>
