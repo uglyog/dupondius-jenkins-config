@@ -11,7 +11,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty>
-      <projectUrl>https://github.com/uglyog/javaz</projectUrl>
+      <projectUrl>https://github.com/uglyog/javaz/</projectUrl>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
   <scm class="hudson.plugins.git.GitSCM">
@@ -77,22 +77,16 @@ if [ $PIPELINE_VERSION ]
     echo HEAD is now: `git log --decorate --format=format:&apos;%H %d&apos; --tags | grep \(HEAD`
 fi
 
-sed -i s/app.version=.*/app.version=$PIPELINE_VERSION/ application.properties </command>
+sed -i &quot;s/\(&lt;version&gt;\)[^&lt;]*\(&lt;\/version&gt;\)/\1$PIPELINE_VERSION\2/&quot; javaz/pom.xml </command>
     </hudson.tasks.Shell>
-    <com.g2one.hudson.grails.GrailsBuilder>
-      <targets>&quot;prod war --stacktrace&quot;</targets>
-      <name>grails</name>
-      <grailsWorkDir></grailsWorkDir>
-      <projectWorkDir></projectWorkDir>
-      <projectBaseDir></projectBaseDir>
-      <serverPort></serverPort>
-      <properties></properties>
-      <forceUpgrade>false</forceUpgrade>
-      <nonInteractive>true</nonInteractive>
-      <useWrapper>false</useWrapper>
-    </com.g2one.hudson.grails.GrailsBuilder>
+    <hudson.tasks.Maven>
+      <targets>clean package -DskipTests=true</targets>
+      <mavenName>maven-3.0.4</mavenName>
+      <pom>javaz/pom.xml</pom>
+      <usePrivateRepository>false</usePrivateRepository>
+    </hudson.tasks.Maven>
     <hudson.tasks.Shell>
-      <command>scp -o StrictHostKeyChecking=no target/*.javaz.dupondi.us:/var/tmp
+      <command>scp -o StrictHostKeyChecking=no javaz/target/*.war deployer@canary.javaz.dupondi.us:/var/tmp
 ssh deployer@canary.javaz.dupondi.us &quot;chown :tomcat /var/tmp/javaz-$PIPELINE_VERSION.war; mv /var/tmp/javaz-$PIPELINE_VERSION.war /var/lib/tomcat7/webapps/ROOT.war&quot;</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
@@ -110,7 +104,7 @@ fi</command>
   </builders>
   <publishers>
     <hudson.tasks.ArtifactArchiver>
-      <artifacts>target/*.war</artifacts>
+      <artifacts>javaz/target/*.war</artifacts>
       <latestOnly>false</latestOnly>
     </hudson.tasks.ArtifactArchiver>
     <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
