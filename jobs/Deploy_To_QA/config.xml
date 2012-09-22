@@ -11,7 +11,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty>
-      <projectUrl>https://github.com/uglyog/dupondius-grails-skeleton/</projectUrl>
+      <projectUrl>https://github.com/uglyog/javaz</projectUrl>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
   <scm class="hudson.plugins.git.GitSCM">
@@ -20,7 +20,7 @@
       <hudson.plugins.git.UserRemoteConfig>
         <name></name>
         <refspec></refspec>
-        <url>git@github.com:uglyog/dupondius-grails-skeleton.git</url>
+        <url>git@github.com:uglyog/javaz.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -80,19 +80,19 @@ fi
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>mkdir -p target
-curl -L http://ci.grails.dupondi.us:8080/jnlpJars/jenkins-cli.jar &gt; target/jenkins-cli.jar
+curl -L http://ci.javaz.dupondi.us:8080/jnlpJars/jenkins-cli.jar &gt; target/jenkins-cli.jar
 UPSTREAM_BUILD=`java -jar target/jenkins-cli.jar groovy scripts/get-upstream-build-artifact.groovy $JOB_NAME $BUILD_NUMBER`
 if [ &quot;$UPSTREAM_BUILD&quot; == &quot;ERROR - no upstreamCause found&quot; ]; then exit 1; fi
-curl -L http://ci.grails.dupondi.us:8080/job/$UPSTREAM_BUILD/artifact/target/dupondius-grails-skeleton-$PIPELINE_VERSION.war &gt; target/dupondius-grails-skeleton-$PIPELINE_VERSION.war
-scp -o StrictHostKeyChecking=no target/*.war deployer@qa.grails.dupondi.us:/var/tmp
-ssh deployer@qa.grails.dupondi.us &quot;chown :tomcat /var/tmp/dupondius-grails-skeleton-$PIPELINE_VERSION.war; mv /var/tmp/dupondius-grails-skeleton-$PIPELINE_VERSION.war /var/lib/tomcat7/webapps/ROOT.war&quot;</command>
+curl -L http://ci.javaz.dupondi.us:8080/job/$UPSTREAM_BUILD/artifact/target/javaz-$PIPELINE_VERSION.war &gt; target/javaz-$PIPELINE_VERSION.war
+scp -o StrictHostKeyChecking=no target/*.javaz.dupondi.us:/var/tmp
+ssh deployer@qa.javaz.dupondi.us &quot;chown :tomcat /var/tmp/javaz-$PIPELINE_VERSION.war; mv /var/tmp/javaz-$PIPELINE_VERSION.war /var/lib/tomcat7/webapps/ROOT.war&quot;</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 120
-curl -fsS http://qa.grails.dupondi.us:8080/status</command>
+curl -fsS http://qa.javaz.dupondi.us:8080/status</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>APP_VERSION=`curl -fsS http://qa.grails.dupondi.us:8080/status/version`
+      <command>APP_VERSION=`curl -fsS http://qa.javaz.dupondi.us:8080/status/version`
 if [ &quot;$APP_VERSION&quot; != &quot;$PIPELINE_VERSION&quot; ]
   then
     echo &quot;Expected $PIPELINE_VERSION but got $APP_VERSION instead&quot;

@@ -11,7 +11,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty>
-      <projectUrl>https://github.com/uglyog/dupondius-grails-skeleton/</projectUrl>
+      <projectUrl>https://github.com/uglyog/javaz</projectUrl>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
@@ -39,7 +39,7 @@
       <hudson.plugins.git.UserRemoteConfig>
         <name></name>
         <refspec></refspec>
-        <url>git@github.com:uglyog/dupondius-grails-skeleton.git</url>
+        <url>git@github.com:uglyog/javaz.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -108,15 +108,15 @@ sed -i s/app.version=.*/app.version=$TAG/ application.properties </command>
       <useWrapper>false</useWrapper>
     </com.g2one.hudson.grails.GrailsBuilder>
     <hudson.tasks.Shell>
-      <command>scp -o StrictHostKeyChecking=no target/*.war deployer@$HOSTNAME.grails.dupondi.us:/var/tmp
-ssh deployer@$HOSTNAME.grails.dupondi.us &quot;chown :tomcat /var/tmp/dupondius-grails-skeleton-$TAG.war; mv /var/tmp/dupondius-grails-skeleton-$TAG.war /var/lib/tomcat7/webapps/ROOT.war&quot;</command>
+      <command>scp -o StrictHostKeyChecking=no target/*.javaz.dupondi.us:/var/tmp
+ssh deployer@$HOSTNAME.javaz.dupondi.us &quot;chown :tomcat /var/tmp/javaz-$TAG.war; mv /var/tmp/javaz-$TAG.war /var/lib/tomcat7/webapps/ROOT.war&quot;</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 120
-curl -fsS http://$HOSTNAME.grails.dupondi.us:8080/status</command>
+curl -fsS http://$HOSTNAME.javaz.dupondi.us:8080/status</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>APP_VERSION=`curl -fsS http://$HOSTNAME.grails.dupondi.us:8080/status/version`
+      <command>APP_VERSION=`curl -fsS http://$HOSTNAME.javaz.dupondi.us:8080/status/version`
 if [ &quot;$APP_VERSION&quot; -ne &quot;$TAG&quot; ]
   then
     echo &quot;Expected $TAG but got $APP_VERSION instead&quot;

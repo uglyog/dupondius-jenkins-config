@@ -11,7 +11,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty>
-      <projectUrl>https://github.com/uglyog/dupondius-grails-skeleton/</projectUrl>
+      <projectUrl>https://github.com/uglyog/javaz</projectUrl>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
   <scm class="hudson.plugins.git.GitSCM">
@@ -20,7 +20,7 @@
       <hudson.plugins.git.UserRemoteConfig>
         <name></name>
         <refspec></refspec>
-        <url>git@github.com:uglyog/dupondius-grails-skeleton.git</url>
+        <url>git@github.com:uglyog/javaz.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -37,6 +37,7 @@
     <pruneBranches>false</pruneBranches>
     <remotePoll>false</remotePoll>
     <ignoreNotifyCommit>false</ignoreNotifyCommit>
+    <useShallowClone>false</useShallowClone>
     <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
     <gitTool>Default</gitTool>
     <submoduleCfg class="list"/>
@@ -91,15 +92,15 @@ sed -i s/app.version=.*/app.version=$PIPELINE_VERSION/ application.properties </
       <useWrapper>false</useWrapper>
     </com.g2one.hudson.grails.GrailsBuilder>
     <hudson.tasks.Shell>
-      <command>scp -o StrictHostKeyChecking=no target/*.war deployer@canary.grails.dupondi.us:/var/tmp
-ssh deployer@canary.grails.dupondi.us &quot;chown :tomcat /var/tmp/dupondius-grails-skeleton-$PIPELINE_VERSION.war; mv /var/tmp/dupondius-grails-skeleton-$PIPELINE_VERSION.war /var/lib/tomcat7/webapps/ROOT.war&quot;</command>
+      <command>scp -o StrictHostKeyChecking=no target/*.javaz.dupondi.us:/var/tmp
+ssh deployer@canary.javaz.dupondi.us &quot;chown :tomcat /var/tmp/javaz-$PIPELINE_VERSION.war; mv /var/tmp/javaz-$PIPELINE_VERSION.war /var/lib/tomcat7/webapps/ROOT.war&quot;</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 120
-curl -fsS http://canary.grails.dupondi.us:8080/status</command>
+curl -fsS http://canary.javaz.dupondi.us:8080/status</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>APP_VERSION=`curl -fsS http://canary.grails.dupondi.us:8080/status/version`
+      <command>APP_VERSION=`curl -fsS http://canary.javaz.dupondi.us:8080/status/version`
 if [ &quot;$APP_VERSION&quot; -ne &quot;$PIPELINE_VERSION&quot; ]
   then
     echo &quot;Expected $PIPELINE_VERSION but got $APP_VERSION instead&quot;
