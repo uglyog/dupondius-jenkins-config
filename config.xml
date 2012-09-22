@@ -1,17 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson>
-  <temporaryOfflineCause class="hudson.slaves.OfflineCause$SimpleOfflineCause">
-    <description>
-      <holder>
-        <owner>hudson.slaves.Messages</owner>
-      </holder>
-      <key>SlaveComputer.DisconnectedBy</key>
-      <args>
-        <string>rholshausen@dius.com.au</string>
-        <string></string>
-      </args>
-    </description>
-  </temporaryOfflineCause>
   <disabledAdministrativeMonitors/>
   <version>1.479</version>
   <numExecutors>1</numExecutors>

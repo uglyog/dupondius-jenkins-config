@@ -72,7 +72,9 @@ mkdir -p tmp</command>
       <command>bundle install</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>bundle exec rake db:migrate spec --trace</command>
+      <command>
+bundle install
+bundle exec rake db:migrate spec --trace</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
