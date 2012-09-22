@@ -11,7 +11,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty>
-      <projectUrl>https://github.com/uglyog/javaz</projectUrl>
+      <projectUrl>https://github.com/uglyog/javaz/</projectUrl>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
   <scm class="hudson.plugins.git.GitSCM">
@@ -70,24 +70,21 @@ if [ $PIPELINE_VERSION ]
 fi
 </command>
     </hudson.tasks.Shell>
-    <com.g2one.hudson.grails.GrailsBuilder>
-      <targets>&quot;test-app :feature --stacktrace&quot;</targets>
-      <name>grails</name>
-      <grailsWorkDir></grailsWorkDir>
-      <projectWorkDir></projectWorkDir>
-      <projectBaseDir></projectBaseDir>
-      <serverPort></serverPort>
-      <properties></properties>
-      <forceUpgrade>false</forceUpgrade>
-      <nonInteractive>true</nonInteractive>
-      <useWrapper>false</useWrapper>
-    </com.g2one.hudson.grails.GrailsBuilder>
+    <hudson.tasks.Maven>
+      <targets>clean test -P integration-test</targets>
+      <mavenName>maven-3.0.4</mavenName>
+      <pom>javaz/pom.xml</pom>
+      <usePrivateRepository>false</usePrivateRepository>
+    </hudson.tasks.Maven>
   </builders>
   <publishers>
-    <hudson.tasks.ArtifactArchiver>
-      <artifacts>target/test-reports/**/*.*</artifacts>
-      <latestOnly>false</latestOnly>
-    </hudson.tasks.ArtifactArchiver>
+    <hudson.tasks.junit.JUnitResultArchiver>
+      <testResults>javaz/target/surefire-reports/**/*.xml</testResults>
+      <keepLongStdio>false</keepLongStdio>
+      <testDataPublishers>
+        <hudson.plugins.claim.ClaimTestDataPublisher/>
+      </testDataPublishers>
+    </hudson.tasks.junit.JUnitResultArchiver>
     <hudson.plugins.parameterizedtrigger.BuildTrigger>
       <configs>
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
