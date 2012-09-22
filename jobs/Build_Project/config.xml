@@ -66,7 +66,11 @@
 mkdir -p reports
 rm -rf reports/*
 touch reports/rspec_output.html
-mkdir -p tmp</command>
+mkdir -p tmp
+
+if ! `gem query -i -n bundler`; then gem install bundler; fi
+
+      </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>bundle install</command>
