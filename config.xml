@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson>
   <disabledAdministrativeMonitors/>
-  <version>1.481</version>
+  <version>1.482</version>
   <numExecutors>1</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
@@ -163,15 +163,5 @@ exit 0</initScript>
   <slaveAgentPort>0</slaveAgentPort>
   <label></label>
   <nodeProperties/>
-  <globalNodeProperties>
-    <hudson.tools.ToolLocationNodeProperty>
-      <locations>
-        <hudson.tools.ToolLocationNodeProperty_-ToolLocation>
-          <type>com.g2one.hudson.grails.GrailsInstallation$DescriptorImpl</type>
-          <name>grails</name>
-          <home>$HOME/tools/Grails/grails/</home>
-        </hudson.tools.ToolLocationNodeProperty_-ToolLocation>
-      </locations>
-    </hudson.tools.ToolLocationNodeProperty>
-  </globalNodeProperties>
+  <globalNodeProperties/>
 </hudson>
