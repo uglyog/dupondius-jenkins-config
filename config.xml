@@ -59,9 +59,9 @@
     <hudson.plugins.ec2.EC2Cloud>
       <name>ec2-us-east-1</name>
       <accessId>AKIAIB3JD5B24BFQEDVQ</accessId>
-      <secretKey>2ffyYIohhHKzIXGnG4mDnx1HPcP004qITceFMlh9XUm9y/hD2golx3uFc2kQffZjJwyh9oaqP0mB0OH2NoRyZg==</secretKey>
+      <secretKey>aa</secretKey>
       <privateKey>
-        <privateKey>yz1vleoZlUz4zfrV0CXnZjHd13xjCYSfsyFWSu4/DmLzF8+xn7j0ATCzdG4XtxLfwC/N6mqsWZd0x9s5ztumdokIDsRs4WrFz7WPBD+N6H9Dbpl8fx2k1j/puJHSNlNfLOXM7N+AIk2g1BiInn+a+Z7ndedbuoHs3Ne2AAxc9iuXQ9k70qnUZqsCgFrW0o11ZoA7u5Zo5W/k9I8cbLekzUYnwgtNE+3hgsfFDkvF7zRn/9hc6qH3oHtb83Xw4C5lMjqXEdkJUaxEyO42c33CoXTh3MklrL8uSLI+gqG1mvXZxOPltWoKqDGjvDkt+aQR</privateKey>
+        <privateKey>aa</privateKey>
       </privateKey>
       <instanceCap>2147483647</instanceCap>
       <templates>
