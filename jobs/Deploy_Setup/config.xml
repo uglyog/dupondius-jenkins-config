@@ -94,9 +94,7 @@ echo HEAD is now: `git log --decorate --format=format:&apos;%H %d&apos; --tags |
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>export LAUNCHPAD_ENABLED=true
-export LAUNCHPAD_JOBS=true
-export AWS_ENABLED=true
+      <command>
 bundle install
 PIPELINE_VERSION=$TAG cap HOSTS=$HOSTNAME.dupondius.dupondi.us $ENVIRONMENT_TO_DEPLOY deploy:setup</command>
     </hudson.tasks.Shell>
