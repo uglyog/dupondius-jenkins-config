@@ -77,6 +77,11 @@ if ! `gem query -i -n bundler`; then gem install bundler; fi
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>
+export DB_NAME="$PROJECT_NAME"
+export DB_USERNAME="$PROJECT_NAME"
+export DB_PASSWORD="$PROJECT_NAME"
+export DB_HOST=localhost
+export DB_PORT=3306
 bundle install
 bundle exec rake db:migrate spec --trace</command>
     </hudson.tasks.Shell>
