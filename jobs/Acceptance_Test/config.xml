@@ -72,7 +72,14 @@ mkdir -p reports
 rm -rf reports/*</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>bundle install
+      <command>
+export DB_NAME="$PROJECT_NAME"
+export DB_USERNAME="$PROJECT_NAME"
+export DB_PASSWORD="$PROJECT_NAME"
+export DB_HOST=localhost
+export DB_PORT=3306
+
+bundle install
 RAILS_ENV=test bundle exec rake db:migrate assets:precompile cucumber --trace</command>
     </hudson.tasks.Shell>
   </builders>
