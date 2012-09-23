@@ -80,7 +80,7 @@ export DB_HOST=localhost
 export DB_PORT=3306
 
 bundle install
-RAILS_ENV=test bundle exec rake db:migrate assets:precompile cucumber --trace</command>
+RAILS_ENV=cucumber bundle exec rake db:migrate assets:precompile cucumber --trace</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
