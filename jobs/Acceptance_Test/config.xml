@@ -73,7 +73,7 @@ rm -rf reports/*</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>bundle install
-RAILS_ENV=cucumber bundle exec rake db:migrate assets:precompile cucumber --trace</command>
+RAILS_ENV=test bundle exec rake db:migrate assets:precompile cucumber --trace</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
