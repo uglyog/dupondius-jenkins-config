@@ -11,7 +11,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty>
-      <projectUrl>https://github.com/uglyog/javaz</projectUrl>
+      <projectUrl>https://github.com/uglyog/javaz/</projectUrl>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
   <scm class="hudson.plugins.git.GitSCM">
@@ -77,7 +77,7 @@ if [ $PIPELINE_VERSION ]
     echo HEAD is now: `git log --decorate --format=format:&apos;%H %d&apos; --tags | grep \(HEAD`
 fi
 
-sed -i &quot;s/\(&lt;version&gt;\)[^&lt;]*\(&lt;\/version&gt;\)/\1$PIPELINE_VERSION\2/&quot; javaz/pom.xml </command>
+sed -i &quot;s/\(&lt;version&gt;\)[^&lt;]*\(&lt;\/version&gt;\)/\1$PIPELINE_VERSION\2/&quot; pom.xml </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Maven>
       <targets>clean package -DskipTests=true</targets>
@@ -86,7 +86,7 @@ sed -i &quot;s/\(&lt;version&gt;\)[^&lt;]*\(&lt;\/version&gt;\)/\1$PIPELINE_VERS
       <usePrivateRepository>false</usePrivateRepository>
     </hudson.tasks.Maven>
     <hudson.tasks.Shell>
-      <command>scp -o StrictHostKeyChecking=no javaz/target/*.javaz.dupondi.us:/var/tmp
+      <command>scp -o StrictHostKeyChecking=no target/*war deployer@canary.javaz.dupondi.us:/var/tmp
 ssh deployer@canary.javaz.dupondi.us &quot;chown :tomcat /var/tmp/javaz-$PIPELINE_VERSION.war; mv /var/tmp/javaz-$PIPELINE_VERSION.war /var/lib/tomcat7/webapps/ROOT.war&quot;</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
@@ -104,7 +104,7 @@ fi</command>
   </builders>
   <publishers>
     <hudson.tasks.ArtifactArchiver>
-      <artifacts>javaz/target/*.war</artifacts>
+      <artifacts>target/*.war</artifacts>
       <latestOnly>false</latestOnly>
     </hudson.tasks.ArtifactArchiver>
     <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>

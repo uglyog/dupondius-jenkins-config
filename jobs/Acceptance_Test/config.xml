@@ -11,7 +11,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty>
-      <projectUrl>https://github.com/uglyog/javaz</projectUrl>
+      <projectUrl>https://github.com/uglyog/javaz/</projectUrl>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
   <scm class="hudson.plugins.git.GitSCM">
@@ -73,13 +73,12 @@ fi
     <hudson.tasks.Maven>
       <targets>clean test -P integration-test</targets>
       <mavenName>maven-3.0.4</mavenName>
-      <pom>javaz/pom.xml</pom>
       <usePrivateRepository>false</usePrivateRepository>
     </hudson.tasks.Maven>
   </builders>
   <publishers>
     <hudson.tasks.junit.JUnitResultArchiver>
-      <testResults>javaz/target/surefire-reports/**/*.xml</testResults>
+      <testResults>target/surefire-reports/**/*.xml</testResults>
       <keepLongStdio>false</keepLongStdio>
       <testDataPublishers>
         <hudson.plugins.claim.ClaimTestDataPublisher/>
