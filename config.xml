@@ -49,7 +49,7 @@
   <jdks>
     <jdk>
       <name>JDK 1.6</name>
-      <home>/usr/lib/jvm/jre-1.6.0-openjdk.x86_64</home>
+      <home>/usr/lib/jvm/java-1.6.0-openjdk.x86_64</home>
       <properties/>
     </jdk>
   </jdks>
