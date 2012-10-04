@@ -97,7 +97,7 @@ echo HEAD is now: `git log --decorate --format=format:&apos;%H %d&apos; --tags |
       <command>
 source /etc/default/app
 bundle install
-PIPELINE_VERSION=$TAG cap HOSTS=$HOSTNAME.dupondius.dupondi.us $ENVIRONMENT_TO_DEPLOY deploy:setup</command>
+PIPELINE_VERSION=$TAG cap HOSTS=$HOSTNAME $ENVIRONMENT_TO_DEPLOY deploy:setup</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
