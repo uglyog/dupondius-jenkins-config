@@ -81,6 +81,7 @@ rm -rf reports/*</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>
+source /etc/default/app
 bundle install
 cap production deploy</command>
     </hudson.tasks.Shell>

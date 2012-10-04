@@ -80,7 +80,9 @@ mkdir -p reports
 rm -rf reports/*</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>bundle install
+      <command>
+source /etc/default/app
+bundle install
 cap canary deploy</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
