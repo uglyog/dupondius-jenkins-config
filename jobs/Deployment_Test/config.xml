@@ -88,7 +88,12 @@ cap canary deploy</command>
 curl http://canary.citest6.dupondi.us/status/heart_beat</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>RAILS_ENV=cucumber rake db:migrate cucumber:canary --trace</command>
+      <command>APP_VERSION=`curl -fsS http://canary.testci.dupondi.us/status/version`
+if [ &quot;$APP_VERSION&quot; != &quot;$PIPELINE_VERSION&quot; ]
+  then
+    echo &quot;Expected $PIPELINE_VERSION but got $APP_VERSION instead&quot;
+    exit 1
+fi</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>

@@ -101,6 +101,14 @@ PIPELINE_VERSION=$TAG cap HOSTS=$HOSTNAME.dupondius.dupondi.us $ENVIRONMENT_TO_D
       <command>sleep 20
 curl http://$HOSTNAME.dupondius.dupondi.us/status/heart_beat</command>
     </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>APP_VERSION=`curl -fsS http://$HOSTNAME.dupondius.dupondi.us/status/version`
+if [ &quot;$APP_VERSION&quot; -ne &quot;$TAG&quot; ]
+  then
+    echo &quot;Expected $TAG but got $APP_VERSION instead&quot;
+    exit 1
+fi</command>
+    </hudson.tasks.Shell>
   </builders>
   <publishers/>
   <buildWrappers>
