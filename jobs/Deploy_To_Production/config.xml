@@ -98,12 +98,6 @@ if [ &quot;$APP_VERSION&quot; != &quot;$PIPELINE_VERSION&quot; ]
 fi</command>
     </hudson.tasks.Shell>
   </builders>
-  <publishers>
-    <hudson.tasks.ArtifactArchiver>
-      <artifacts>reports/**/*.*</artifacts>
-      <latestOnly>false</latestOnly>
-    </hudson.tasks.ArtifactArchiver>
-  </publishers>
   <buildWrappers>
     <hudson.plugins.timestamper.TimestamperBuildWrapper/>
     <hudson.plugins.ansicolor.AnsiColorBuildWrapper>
