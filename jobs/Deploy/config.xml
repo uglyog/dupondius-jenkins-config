@@ -96,14 +96,14 @@ echo HEAD is now: `git log --decorate --format=format:&apos;%H %d&apos; --tags |
       <command>
 source /etc/default/app
 bundle install
-PIPELINE_VERSION=$TAG cap HOSTS=$HOSTNAME.dupondius.dupondi.us $ENVIRONMENT_TO_DEPLOY deploy</command>
+PIPELINE_VERSION=$TAG cap HOSTS=$HOSTNAME.$PROJECT_NAME.dupondi.us $ENVIRONMENT_TO_DEPLOY deploy</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 20
-curl http://$HOSTNAME.dupondius.dupondi.us/status/heart_beat</command>
+curl http://$HOSTNAME.$PROJECT_NAME.dupondi.us/status/heart_beat</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>APP_VERSION=`curl -fsS http://$HOSTNAME.dupondius.dupondi.us/status/version`
+      <command>APP_VERSION=`curl -fsS http://$HOSTNAME.$PROJECT_NAME.dupondi.us/status/version`
 if [ &quot;$APP_VERSION&quot; -ne &quot;$TAG&quot; ]
   then
     echo &quot;Expected $TAG but got $APP_VERSION instead&quot;

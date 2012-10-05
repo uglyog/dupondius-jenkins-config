@@ -87,10 +87,10 @@ cap qa deploy</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 180
-curl http://qa.testci6.dupondi.us/status/heart_beat</command>
+curl http://qa.$PROJECT_NAME.dupondi.us/status/heart_beat</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>APP_VERSION=`curl -fsS http://qa.testci.dupondi.us/status/version`
+      <command>APP_VERSION=`curl -fsS http://qa.$PROJECT_NAME.dupondi.us/status/version`
 if [ &quot;$APP_VERSION&quot; != &quot;$PIPELINE_VERSION&quot; ]
   then
     echo &quot;Expected $PIPELINE_VERSION but got $APP_VERSION instead&quot;
