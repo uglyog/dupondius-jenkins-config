@@ -85,7 +85,7 @@ UPSTREAM_BUILD=`java -jar target/jenkins-cli.jar groovy scripts/get-upstream-bui
 if [ &quot;$UPSTREAM_BUILD&quot; == &quot;ERROR - no upstreamCause found&quot; ]; then exit 1; fi
 curl -L http://ci.grails.dupondi.us:8080/job/$UPSTREAM_BUILD/artifact/target/dupondius-grails-skeleton-$PIPELINE_VERSION.war &gt; target/dupondius-grails-skeleton-$PIPELINE_VERSION.war
 scp -o StrictHostKeyChecking=no target/*.war deployer@production.grails.dupondi.us:/var/tmp
-ssh deployer@production.grails.dupondi.us &quot;chown :tomcat /var/tmp/dupondius-grails-skeleton-$PIPELINE_VERSION.war; mv /var/tmp/dupondius-grails-skeleton-$PIPELINE_VERSION.war /var/lib/tomcat7/webapps/ROOT.war&quot;</command>
+ssh deployer@production.grails.dupondi.us &quot;~/deploy.sh $PIPELINE_VERSION&quot;</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 120
