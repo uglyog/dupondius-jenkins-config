@@ -91,7 +91,9 @@ sed -i s/app.version=.*/app.version=$PIPELINE_VERSION/ application.properties </
       <useWrapper>false</useWrapper>
     </com.g2one.hudson.grails.GrailsBuilder>
     <hudson.tasks.Shell>
-      <command>scp -o StrictHostKeyChecking=no target/*.war deployer@canary.grails.dupondi.us:/var/tmp
+      <command>
+ssh-keygen -R canary.grails.dupondi.us
+scp -o StrictHostKeyChecking=no target/*.war deployer@canary.grails.dupondi.us:/var/tmp
 ssh -o StrictHostKeyChecking=no deployer@canary.grails.dupondi.us &quot;~/deploy.sh $PIPELINE_VERSION&quot;</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>

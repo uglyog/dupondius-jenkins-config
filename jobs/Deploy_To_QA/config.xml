@@ -84,6 +84,7 @@ curl -L http://ci.grails.dupondi.us:8080/jnlpJars/jenkins-cli.jar &gt; target/je
 UPSTREAM_BUILD=`java -jar target/jenkins-cli.jar groovy scripts/get-upstream-build-artifact.groovy $JOB_NAME $BUILD_NUMBER`
 if [ &quot;$UPSTREAM_BUILD&quot; == &quot;ERROR - no upstreamCause found&quot; ]; then exit 1; fi
 curl -L http://ci.grails.dupondi.us:8080/job/$UPSTREAM_BUILD/artifact/target/dupondius-grails-skeleton-$PIPELINE_VERSION.war &gt; target/dupondius-grails-skeleton-$PIPELINE_VERSION.war
+ssh-keygen -R qa.grails.dupondi.us
 scp -o StrictHostKeyChecking=no target/*.war deployer@qa.grails.dupondi.us:/var/tmp
 ssh -o StrictHostKeyChecking=no deployer@qa.grails.dupondi.us &quot;~/deploy.sh $PIPELINE_VERSION&quot;</command>
     </hudson.tasks.Shell>
