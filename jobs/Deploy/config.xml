@@ -118,7 +118,7 @@ ssh -o StrictHostKeyChecking=no deployer@$HOSTNAME &quot;~/deploy.sh $TAG&quot;<
 curl -fsS http://$HOSTNAME:8080/status</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>APP_VERSION=`curl -fsS http://$HOSTNAME.grails.dupondi.us:8080/status/version`
+      <command>APP_VERSION=`curl -fsS http://$HOSTNAME:8080/status/version`
 if [ &quot;$APP_VERSION&quot; -ne &quot;$TAG&quot; ]
   then
     echo &quot;Expected $TAG but got $APP_VERSION instead&quot;
