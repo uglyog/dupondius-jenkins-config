@@ -109,7 +109,7 @@ sed -i s/app.version=.*/app.version=$TAG/ application.properties </command>
     </com.g2one.hudson.grails.GrailsBuilder>
     <hudson.tasks.Shell>
       <command>scp -o StrictHostKeyChecking=no target/*.war deployer@$HOSTNAME:/var/tmp
-ssh deployer@$HOSTNAME &quot;~/deploy.sh $PIPELINE_VERSION&quot;</command>
+ssh -o StrictHostKeyChecking=no deployer@$HOSTNAME &quot;~/deploy.sh $PIPELINE_VERSION&quot;</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 120
