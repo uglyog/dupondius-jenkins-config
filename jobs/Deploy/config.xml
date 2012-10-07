@@ -111,7 +111,7 @@ sed -i s/app.version=.*/app.version=$TAG/ application.properties </command>
       <command>
 ssh-keygen -R $HOSTNAME
 scp -o StrictHostKeyChecking=no target/*.war deployer@$HOSTNAME:/var/tmp
-ssh -o StrictHostKeyChecking=no deployer@$HOSTNAME &quot;~/deploy.sh $PIPELINE_VERSION&quot;</command>
+ssh -o StrictHostKeyChecking=no deployer@$HOSTNAME &quot;~/deploy.sh $TAG&quot;</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 120
