@@ -62,7 +62,7 @@
 env | sort
 
 if [ ! $PIPELINE_BUILD_NUMBER ]
-  then 
+  then
     printf &apos;\033[0;33;41m                                                                                                        \033[0m\n&apos;
     printf &apos;\033[0;33;41m                         THIS BUILD IS NOT RUNNING AS PART OF A PIPELINE!                               \033[0m\n&apos;
     printf &apos;\033[0;33;41m                                                                                                        \033[0m\n&apos;
@@ -87,10 +87,10 @@ cap canary deploy</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>sleep 60
-curl http://canary.$PROJECT_NAME.dupondi.us/status/heart_beat</command>
+curl http://canary.$PROJECT_NAME.zerobot.io/status/heart_beat</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>APP_VERSION=`curl -fsS http://canary.$PROJECT_NAME.dupondi.us/status/version`
+      <command>APP_VERSION=`curl -fsS http://canary.$PROJECT_NAME.zerobot.io/status/version`
 if [ &quot;$APP_VERSION&quot; != &quot;$PIPELINE_VERSION&quot; ]
   then
     echo &quot;Expected $PIPELINE_VERSION but got $APP_VERSION instead&quot;

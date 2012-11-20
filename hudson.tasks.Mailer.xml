@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson.tasks.Mailer_-DescriptorImpl>
   <helpRedirect/>
-  <hudsonUrl>http://ci.testci6.dupondi.us:8080/</hudsonUrl>
+  <hudsonUrl>http://ci.testci6.zerobot.io:8080/</hudsonUrl>
   <adminAddress>address not configured yet &lt;nobody@nowhere&gt;</adminAddress>
   <useSsl>false</useSsl>
   <charset>UTF-8</charset>
