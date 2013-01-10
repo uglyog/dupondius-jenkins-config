@@ -73,9 +73,9 @@ rm -rf reports/*</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>
-export DB_NAME="$PROJECT_NAME"
-export DB_USERNAME="$PROJECT_NAME"
-export DB_PASSWORD="$PROJECT_NAME"
+export DB_NAME="ci"
+export DB_USERNAME="ciuser"
+export DB_PASSWORD="password"
 export DB_HOST=localhost
 export DB_PORT=3306
 
